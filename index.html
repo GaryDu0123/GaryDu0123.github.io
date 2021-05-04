@@ -1,13 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Helloworld</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/iconfont.css" />
+<title>登录界面</title>
+<script type="text/javascript">
+    //鼠标点击出现爱心特效
+    (function(window,document,undefined){
+        var hearts = [];
+        window.requestAnimationFrame = (function(){
+            return window.requestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                function (callback){
+                    setTimeout(callback,1000/60);
+                }
+        })();
+        init();
+        function init(){
+            attachEvent();
+            heartAnimation();
+        }
+        function heartAnimation(){
+            for(var i=0;i<hearts.length;i++){
+                if(hearts[i].alpha <=0){
+                    document.body.removeChild(hearts[i].el);
+                    hearts.splice(i,1);
+                    continue;
+                }
+                hearts[i].y--;
+                hearts[i].scale += 0.004;
+                hearts[i].alpha -= 0.013;
+                hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color;
+            }
+            requestAnimationFrame(heartAnimation);
+        }
+        function attachEvent(){
+            var old = typeof window.onclick==="function" && window.onclick;
+            window.onclick = function(event){
+                old && old();
+                createHeart(event);
+            }
+        }
+        function createHeart(event){
+            var d = document.createElement("div");
+            d.className = "heart";
+            hearts.push({
+                el : d,
+                x : event.clientX - 5,
+                y : event.clientY - 5,
+                scale : 1,
+                alpha : 1,
+                color : randomColor()
+            });
+            document.body.appendChild(d);
+        }
+        function randomColor(){
+            return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+        }
+    })(window,document);
+
+    var opacity = 1
+    window.onload = function(){
+        let timer;
+        const loginBtn = document.getElementsByClassName("loginButton")[0];
+        loginBtn.onclick = function (){
+            const text = document.getElementById("username")
+            const password = document.getElementById("password")
+            if (text.value !== "" && password.value !== ""){
+                const outerbox = document.getElementById("outerBox");
+                timer = setInterval(function(){
+                    outerbox.style.opacity = (opacity - 0.05).toString()
+                    opacity -= 0.05
+                    if(Number(outerbox.style.opacity)<= 0){
+                        //达到目标，关闭定时器
+                        clearInterval(timer);
+                        setTimeout(function () {
+                            location = "./homepage.html"
+                        },500)
+                    }
+                },1000/60);
+            }else if (text.value === "" && password.value === ""){
+                alert("Please inter the Username and Password")
+            }else if (text.value === ""){
+                alert("Please inter the Username")
+            }else if (password.value === ""){
+                alert("Please inter the Password")
+            }
+        }
+
+
+        const audio = document.getElementsByTagName("audio")[0]
+        let fist_click = true
+        let audio_status_bool = true
+        document.onclick = function (){
+            if (fist_click){
+                audio.play()
+                audio.volume = 0.3
+                fist_click = false
+                audio_status_bool = false
+            }
+
+            // audio.pause()
+        }
+
+        const audioStatus = document.getElementById("audioStatus")
+        audioStatus.onclick = function () {
+            if (audio_status_bool){
+                // alert("hi")
+                audio.pause()
+                audio_status_bool = false
+                audioStatus.className = "iconfont icon-weibiaoti--"
+            }else{
+                audio.play()
+                audio_status_bool = true
+                audioStatus.className = "iconfont icon-yinyue"
+            }
+            
+        }
+    }
+</script>
 </head>
 <body>
-<script type="text/javascript">
-    location = "login.html"
-</script>
+<div id="outerBox">
+    <div id="h1">LOGIN</div>
+    <div class="inputBox">
+        <div class="inputText">
+            <span class="iconfont icon-nickname"></span>
+            <label>
+                <input id="username" type="text" placeholder="Username" autocomplete="off"/>
+            </label>
+        </div>
+        <div class="inputText">
+            <span class="iconfont icon-visible1"></span>
+            <label>
+                <input id="password" type="password" placeholder="Password" autocomplete="off"/>
+            </label>
+        </div>
+    </div>
+    <input id="loginButton" class="loginButton" type="button" value="Login" />
+</div>
 
+<audio id="audio1" loop class="audio" src="audio/雨だれの歌.mp3" autoplay preload="auto" >你的浏览器不支持audio标签</audio>
+<div class="iconfont icon-yinyue" id="audioStatus"></div>
+<!--<iframe allow="autoplay" src="audio/雨だれの歌.mp3"></iframe>-->
 </body>
+
 </html>

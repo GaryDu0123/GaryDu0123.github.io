@@ -1,82 +1,122 @@
-body
-{
-	margin: 0;
-	padding: 0;
-	background-image: url(../img/bgimg.PNG);	/* 背景图片 */
-	background-repeat: no-repeat;	/* 背景图片不重复 */
-	background-size:100% auto;
-	background-attachment:fixed;
+@font-face {
+	font-family: Handwritting;
+	src: url("../font/lovely_eunike_hans.otf");
 }
 
-#bigBox
+body{
+    width:100%;
+    height:100%;
+    /*background-color: #e5c5b2;*/
+    background: url(../img/bgimg.PNG);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+
+}
+
+#outerBox
 {
 	width: 400px;
 	height: 300px;
-	margin: 200px auto 0;
-	padding: 20px 50px;	/* login框内部的距离(内部与输入框和按钮的距离) */
+	/*margin: 200px auto 0;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+
+    transform: translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%); /* IE 9 */
+    -moz-transform:translate(-50%,-50%); /* Firefox */
+    -webkit-transform:translate(-50%,-50%); /* Safari & Chrome */
+    -o-transform:translate(-50%,-50%); 	/* Opera */
+
+    padding: 20px 50px;	/* login框内部的距离(内部与输入框和按钮的距离) */
 	background-color: #00000090;	/* login框背景颜色和透明度 */
 	border-radius: 40px;	/* 圆角边 */
 	text-align: center;	/* 框内所有内容剧中 */
     opacity:1;
 }
-
-#bigBox h1
+/*#bigBox{*/
+/*    position:fixed;   //fixed根据整个窗口定位，不随着滑动而改变*/
+/*left:50%;*/
+/*    top:50%;*/
+/*    transform:translate(-50%,-50%);*/
+/*}*/
+#outerBox #h1
 {
 	color: white;	/* LOGIN字体颜色 */
+	font-family: Handwritting, "Microsoft YaHei UI", cursive;
+	font-size: 45px;
+	/*padding-top: 20px;*/
+	margin: 25px auto 0;
 }
 
-#bigBox .inputBox
+#outerBox .inputBox
 {
-	margin-top: 50px;	/* 输入框顶部与LOGIN标题的间距 */
+	margin-top: 30px;	/* 输入框顶部与LOGIN标题的间距 */
 }
 
-#bigBox .inputBox .inputText
+#outerBox .inputBox .inputText
 {
 	margin-top: 20px;	/* 输入框之间的距离 */
 }
+#outerBox .inputBox .inputText:first-child
+{
+	margin-top: 0;	/* 输入框之间的距离 */
+}
 
-#bigBox .inputBox .inputText span
+#outerBox .inputBox .inputText span
 {
 	color: white;	/* icon颜色 */
 }
 
-#bigBox .inputBox .inputText input {
+#outerBox .inputBox .inputText input {
 	border: 0;	/* 删除输入框边框 */
 	padding: 10px 10px;	/* 输入框内的间距 */
 	border-bottom: 1px solid white;	/* 输入框白色下划线 */
 	background-color: #00000000;	/* 输入框透明 */
 	color: white;	/* 输入字体的颜色 */
 }
+
+#outerBox .inputBox .inputText input:focus{
+    box-shadow: #15defd 0 0 30px;
+    transition: all 0.2s linear;
+}
+
 /*place holder for input text*/
-#bigBox .inputBox .inputText ::-webkit-input-placeholder{/*Webkit browsers*/
+#outerBox .inputBox .inputText ::-webkit-input-placeholder{/*Webkit browsers*/
     color: #b8b8b8;
     font-size:14px;
 }
-#bigBox .inputBox .inputText input :-moz-placeholder{/*Mozilla Firefox 4 to 8*/
+#outerBox .inputBox .inputText input :-moz-placeholder{/*Mozilla Firefox 4 to 8*/
     color: #b8b8b8;
     font-size:14px;
 }
-#bigBox .inputBox .inputText input ::moz-placeholder{/*Mozilla Firefox 19+*/
+#outerBox .inputBox .inputText input ::moz-placeholder{/*Mozilla Firefox 19+*/
     color: #b8b8b8;
     font-size:14px;
 }
-#bigBox .inputBox .inputText input :-ms-input-placeholder{/*Internet Explorer 10+*/
+#outerBox .inputBox .inputText input :-ms-input-placeholder{/*Internet Explorer 10+*/
     color: #b8b8b8;
     font-size:14px;
 }
 /*End area for placeholder*/
-#bigBox .loginButton
+#outerBox .loginButton
 {
 	margin-top: 30px;	/* 按钮顶部与输入框的距离 */
 	width: 150px;
-	height: 25px;
+	height: 30px;
 	color: white;	/* 按钮字体颜色 */
 	border: 0; /* 删除按钮边框 */
 	border-radius: 20px;	/* 按钮圆角边 */
 	background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
 }
-#bigBox .loginButton:active{
-	background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+#outerBox .loginButton:active{
+	opacity: 0.5;
+	transition: all 0.2s linear;
+}
+#outerBox .loginButton:hover {
+    box-shadow: #15defd 0 0 30px;
+    transition: all 0.2s linear;
 }
 
 .heart{width: 10px;
@@ -103,4 +143,11 @@ body
 }
 .audio{
 	float: right;
+}
+#audioStatus{
+	color: #eeeeee;
+	position: absolute;
+	right: 50px;
+	bottom: 50px;
+	padding: 30px;
 }
