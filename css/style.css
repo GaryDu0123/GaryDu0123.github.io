@@ -17,6 +17,7 @@ body
 	background-color: #00000090;	/* login框背景颜色和透明度 */
 	border-radius: 40px;	/* 圆角边 */
 	text-align: center;	/* 框内所有内容剧中 */
+    opacity:1;
 }
 
 #bigBox h1
@@ -39,15 +40,31 @@ body
 	color: white;	/* icon颜色 */
 }
 
-#bigBox .inputBox .inputText input
-{
+#bigBox .inputBox .inputText input {
 	border: 0;	/* 删除输入框边框 */
 	padding: 10px 10px;	/* 输入框内的间距 */
 	border-bottom: 1px solid white;	/* 输入框白色下划线 */
 	background-color: #00000000;	/* 输入框透明 */
 	color: white;	/* 输入字体的颜色 */
 }
-
+/*place holder for input text*/
+#bigBox .inputBox .inputText ::-webkit-input-placeholder{/*Webkit browsers*/
+    color: #b8b8b8;
+    font-size:14px;
+}
+#bigBox .inputBox .inputText input :-moz-placeholder{/*Mozilla Firefox 4 to 8*/
+    color: #b8b8b8;
+    font-size:14px;
+}
+#bigBox .inputBox .inputText input ::moz-placeholder{/*Mozilla Firefox 19+*/
+    color: #b8b8b8;
+    font-size:14px;
+}
+#bigBox .inputBox .inputText input :-ms-input-placeholder{/*Internet Explorer 10+*/
+    color: #b8b8b8;
+    font-size:14px;
+}
+/*End area for placeholder*/
 #bigBox .loginButton
 {
 	margin-top: 30px;	/* 按钮顶部与输入框的距离 */
