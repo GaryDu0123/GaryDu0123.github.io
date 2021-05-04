@@ -2,19 +2,20 @@ body
 {
 	margin: 0;
 	padding: 0;
-	background-image: url(../img/bgimg.jpg);	/* 背景图片 */
+	background-image: url(../img/bgimg.PNG);	/* 背景图片 */
 	background-repeat: no-repeat;	/* 背景图片不重复 */
+	background-size:100% auto;
+	background-attachment:fixed;
 }
 
 #bigBox
 {
-	margin: 0 auto;	/* login框剧中 */
-	margin-top: 200px; /* login框与顶部的距离 */
-	padding: 20px 50px;	/* login框内部的距离(内部与输入框和按钮的距离) */
-	background-color: #00000090;	/* login框背景颜色和透明度 */
 	width: 400px;
 	height: 300px;
-	border-radius: 10px;	/* 圆角边 */
+	margin: 200px auto 0;
+	padding: 20px 50px;	/* login框内部的距离(内部与输入框和按钮的距离) */
+	background-color: #00000090;	/* login框背景颜色和透明度 */
+	border-radius: 40px;	/* 圆角边 */
 	text-align: center;	/* 框内所有内容剧中 */
 }
 
@@ -55,5 +56,34 @@ body
 	color: white;	/* 按钮字体颜色 */
 	border: 0; /* 删除按钮边框 */
 	border-radius: 20px;	/* 按钮圆角边 */
-	background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);	/* 按钮颜色 */
+	background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+#bigBox .loginButton:active{
+	background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+.heart{width: 10px;
+	height: 10px;position: fixed;
+	background: #f00;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);}
+.heart:after,.heart:before{
+	content: '';
+	width: inherit;
+	height: inherit;
+	background: inherit;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	position: fixed;
+}
+.heart:after{
+	top: -5px;
+}
+.heart:before{
+	left: -5px;
+}
+.audio{
+	float: right;
 }
