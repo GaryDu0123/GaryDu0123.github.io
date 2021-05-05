@@ -7,9 +7,56 @@
     body{
         background-color: #4facfe;
     }
+    .mainBody {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    header,
+    footer {
+        flex: 1;
+    }
+
+    .mainDiv {
+        display: flex;
+        flex: 1;
+    }
+
+    .mainContent {
+        flex: 1;
+    }
+
+    .mainNav, .mainAds {
+        /* 两个边栏的宽度设为12em */
+        flex: 0 0 12em;
+    }
+
+    .mainNav {
+        /* 导航放到最左边 */
+        order: -1;
+        background-color: silver;
+    }
+    .mainAds{
+        background-color: azure;
+    }
+    .test{
+        height: 20px;
+        width: 20px;
+        background-color: #fe4f4f;
+    }
 </style>
 </head>
-<body>
-<dialog open>这是打开的对话窗口</dialog>
+
+<body class="mainBody">
+<header>...</header>
+<div class="mainDiv">
+    <main class="mainContent">
+        <div class="test"></div>
+    </main>
+    <nav class="mainNav">...</nav>
+    <aside class="mainAds">...</aside>
+</div>
+<footer>...</footer>
 </body>
 </html>

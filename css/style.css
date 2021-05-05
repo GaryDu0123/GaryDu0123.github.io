@@ -48,6 +48,8 @@ body{
 	font-size: 45px;
 	/*padding-top: 20px;*/
 	margin: 25px auto 0;
+	/*line-height: 45px;*/
+	/*text-align: center;*/
 }
 
 #outerBox .inputBox

@@ -29,13 +29,17 @@
 
 .icon-visible:before {
   content: "\e711";
+  font-size: 20px;
 }
+
 
 .icon-visible1:before {
   content: "\e6a2";
+  font-size: 20px;
 }
 
 .icon-nickname:before {
   content: "\e6a0";
+  font-size: 20px;
 }
 

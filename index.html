@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/iconfont.css" />
-<title>登录界面</title>
+    <link rel="icon" type="image/png" sizes="144x144" href="./icon/logo/logo-144.png"/>
+    <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="./icon/logo/logo-144.png"/>
+    <link rel="bookmark" href="./icon/logo/logo-144.png" type="image/x-icon">
+    <title>登录界面</title>
 <script type="text/javascript">
     //鼠标点击出现爱心特效
     (function(window,document,undefined){
@@ -50,7 +53,7 @@
                 x : event.clientX - 5,
                 y : event.clientY - 5,
                 scale : 1,
-                alpha : 1,
+                alpha : 1, // alpha is the transparency of rgba
                 color : randomColor()
             });
             document.body.appendChild(d);
@@ -104,7 +107,7 @@
             // audio.pause()
         }
 
-        const audioStatus = document.getElementById("audioStatus")
+        let audioStatus = document.getElementById("audioStatus")
         audioStatus.onclick = function () {
             if (audio_status_bool){
                 // alert("hi")
@@ -118,6 +121,16 @@
             }
             
         }
+
+        let password = document.getElementById("password");
+        const iconPassword = document.getElementById("iconPassword");
+        password.onfocus = function (){
+            iconPassword.className = "iconfont icon-visible1"
+        }
+        password.onblur = function (){
+            iconPassword.className = "iconfont icon-visible"
+        }
+
     }
 </script>
 </head>
@@ -132,7 +145,7 @@
             </label>
         </div>
         <div class="inputText">
-            <span class="iconfont icon-visible1"></span>
+            <span class="iconfont icon-visible" id = "iconPassword"></span>
             <label>
                 <input id="password" type="password" placeholder="Password" autocomplete="off"/>
             </label>
