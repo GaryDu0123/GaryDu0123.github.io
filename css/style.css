@@ -93,18 +93,22 @@ body{
 #outerBox .inputBox .inputText ::-webkit-input-placeholder{/*Webkit browsers*/
     color: #b8b8b8;
     font-size:14px;
+	font-family: "JetBrains Mono", "Microsoft YaHei", cursive;
 }
 #outerBox .inputBox .inputText input :-moz-placeholder{/*Mozilla Firefox 4 to 8*/
     color: #b8b8b8;
     font-size:14px;
+	font-family: "JetBrains Mono", "Microsoft YaHei", cursive;
 }
 #outerBox .inputBox .inputText input ::moz-placeholder{/*Mozilla Firefox 19+*/
     color: #b8b8b8;
     font-size:14px;
+	font-family: "JetBrains Mono", "Microsoft YaHei", cursive;
 }
 #outerBox .inputBox .inputText input :-ms-input-placeholder{/*Internet Explorer 10+*/
     color: #b8b8b8;
     font-size:14px;
+	font-family: "JetBrains Mono", "Microsoft YaHei", cursive;
 }
 /*End area for placeholder*/
 #outerBox .loginButton
@@ -116,6 +120,8 @@ body{
 	border: 0; /* 删除按钮边框 */
 	border-radius: 20px;	/* 按钮圆角边 */
 	background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+	font-family: "JetBrains Mono", "Microsoft YaHei", cursive;
+	font-size: 13px;
 }
 #outerBox .loginButton:active{
 	opacity: 0.5;
