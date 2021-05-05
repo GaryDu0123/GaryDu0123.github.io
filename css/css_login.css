@@ -1,0 +1,136 @@
+body{
+    background-color: #4facfe;
+}
+.flexContainer {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+header{
+    height: 40px;
+    background-color: #eeeeee;
+    position: sticky;
+    top: 0;
+    margin-bottom: 20px;
+}
+
+.mainDiv {
+    display: flex;
+    flex: 1;
+}
+
+.mainContent {
+    flex: 1;
+    /*display: flex;*/
+}
+
+
+.mainNav{
+    /* 两个边栏的宽度设为12em */
+    flex: 0 0 12em;
+}
+
+.mainNav {
+    /* 导航放到最左边 */
+    order: -1;
+    background-color: lightskyblue;
+    border-radius: 0 20px 20px 0;
+    /*position: fixed;*/
+
+}
+.nav-menus{
+    height: 40px;
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    text-align:center;
+    line-height: 40px;
+
+}
+
+
+.nav-menus a{
+    height: 100%;
+    display: block;
+    text-decoration:none;
+    color: #777;
+    font-size: 18px;
+    padding: 0;
+
+
+}
+
+.mainSpace{
+    /*background-color: azure;*/
+    width: 30px;
+}
+div.sdmenu {
+    width: auto;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding-bottom: 10px;
+    /*background: url(bottom.gif) no-repeat right bottom;*/
+    color: #fff;
+}
+
+
+div.sdmenu div {
+    /*background: url(title.gif) repeat-x;*/
+    overflow: hidden;
+    /*position: sticky;*/
+}
+div.sdmenu div:hover{
+    background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+}
+
+div.sdmenu div:first-child:hover{
+    /*background: url(toptitle.gif) no-repeat;*/
+    border-radius: 0 20px 0 0;
+}
+
+
+div.sdmenu div.collapsed {
+    height: 40px;
+}
+
+div.sdmenu div span {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    overflow: hidden;
+    /*padding: 5px 25px;*/
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+
+div.sdmenu div a {
+    font-size: 18px;
+    padding: 5px 10px;
+    text-decoration: none;
+    background: #eee;
+    display: block;
+    border-bottom: 1px solid #ddd;
+    color: #066;
+    line-height: 1em;
+    text-align: center;
+}
+
+div.sdmenu div a.current {
+    background: #ccc;
+}
+
+div.sdmenu div a:hover {
+    /*background: #066 url(linkarrow.gif) no-repeat right center;*/
+    color: #fff;
+    background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+    text-decoration: none;
+}
+.mainContent iframe{
+    height: 100%;
+    width: 100%;
+}
+

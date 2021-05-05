@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Myself</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="article.css">
+<link rel="stylesheet" href="./codeHeightLight/styles/hybrid.css">
+<script src="./codeHeightLight/highlight.pack.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body>
+    <div class="mainBox">
+
+        <article>
+            <p>test</p>
+            <p>test</p>
+            <pre><code class="lang-python codeHighlight">import math
+
+print('''\033[1;37;40m   Only in R^3  \033[0m
+\033[1;37;40mu = [u1, u2, u3]\033[0m
+\033[1;37;40mv = [v1, v2, v3]\033[0m''')
+u1 = int(input("u1 ").strip())
+u2 = int(input("u2 ").strip())
+u3 = int(input("u3 ").strip())
+b1 = int(input("v1 ").strip())
+b2 = int(input("v2 ").strip())
+b3 = int(input("v3 ").strip())
+dot = u1 * b1 + u2 * b2 + u3 * b3
+cross = u2 * b3 - u3 * b2, u3 * b1 - b3 * u1, u1 * b2 - u2 * b1  # 生成一个元组
+print("点乘\t", dot, "\t\033[1;31;40m垂直\033[0m " if dot == 0 else "")
+print("叉乘\t", cross, "\t\033[1;31;40m平行\033[0m " if not any(cross) else "")
+print("Length", math.sqrt((u2 * b3 - u3 * b2) ** 2
+                          + (u3 * b1 - b3 * u1) ** 2
+                          + (u1 * b2 - u2 * b1) ** 2)
+      )
+</code></pre>
+        </article>
+
+    </div>
+</body>
+</html>

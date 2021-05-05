@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("../font/JetBrainsMono[wght].ttf");
+}
+
+body{
+    background-color:transparent;
+    font-family: "Microsoft YaHei", "Microsoft YaHei UI", cursive;
+}
+
+.mainBox{
+    box-shadow: 0 0 20px black;
+    height: 1500px;
+    background-color: #d4fc79;
+    margin: 20px 40px;
+}
+p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+article{
+    padding: 30px;
+    font-size: 18px;
+    line-height: 1em;
+}
+
+.codeHighlight{
+    font-size: 14px !important;
+    font-family: "JetBrains Mono", cursive;
+}
