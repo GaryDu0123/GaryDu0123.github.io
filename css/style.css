@@ -57,31 +57,30 @@ body{
 	/*text-align: center;*/
 }
 
-#outerBox .inputBox
-{
-	margin-top: 30px;	/* 输入框顶部与LOGIN标题的间距 */
+#outerBox .inputBox {
+	/* The distance between the top of the input box and the LOGIN title */
+	margin-top: 30px;
 }
 
-#outerBox .inputBox .inputText
-{
-	margin-top: 20px;	/* 输入框之间的距离 */
+#outerBox .inputBox .inputText {
+	/*The distance between input boxes */
+	margin-top: 20px;
 }
-#outerBox .inputBox .inputText:first-child
-{
-	margin-top: 0;	/* 输入框之间的距离 */
+#outerBox .inputBox .inputText:first-child {
+	margin-top: 0;
 }
 
 #outerBox .inputBox .inputText span
 {
-	color: white;	/* icon颜色 */
+	color: white;	/* icon color */
 }
 
 #outerBox .inputBox .inputText input {
-	border: 0;	/* 删除输入框边框 */
-	padding: 10px 10px;	/* 输入框内的间距 */
-	border-bottom: 1px solid white;	/* 输入框白色下划线 */
-	background-color: #00000000;	/* 输入框透明 */
-	color: white;	/* 输入字体的颜色 */
+	border: 0;
+	padding: 10px 10px;
+	border-bottom: 1px solid white;
+	background-color: #00000000;
+	color: white;
 }
 
 #outerBox .inputBox .inputText input:focus{

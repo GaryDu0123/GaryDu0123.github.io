@@ -16,7 +16,7 @@
             <p>test</p>
             <p>test</p>
             <div class="polaroid rotate_right">
-                <img alt="世博中国馆" height="140" src="../img/chino.GIF" width="139" style="zoom: 150%"/>
+                <img alt="chino" height="140" src="../img/chino.GIF" width="139" style="zoom: 150%"/>
                 <p class="caption">chino</p>
             </div>
             <pre><code class="lang-python codeHighlight">import math
@@ -31,14 +31,15 @@ b1 = int(input("v1 ").strip())
 b2 = int(input("v2 ").strip())
 b3 = int(input("v3 ").strip())
 dot = u1 * b1 + u2 * b2 + u3 * b3
-cross = u2 * b3 - u3 * b2, u3 * b1 - b3 * u1, u1 * b2 - u2 * b1  # 生成一个元组
-print("点乘\t", dot, "\t\033[1;31;40m垂直\033[0m " if dot == 0 else "")
-print("叉乘\t", cross, "\t\033[1;31;40m平行\033[0m " if not any(cross) else "")
+cross = u2 * b3 - u3 * b2, u3 * b1 - b3 * u1, u1 * b2 - u2 * b1  # Generate a tuple
+print("dot\t", dot, "\t\033[1;31;40mOrthogonal\033[0m " if dot == 0 else "")
+print("cross\t", cross, "\t\033[1;31;40mparallel\033[0m " if not any(cross) else "")
 print("Length", math.sqrt((u2 * b3 - u3 * b2) ** 2
                           + (u3 * b1 - b3 * u1) ** 2
                           + (u1 * b2 - u2 * b1) ** 2)
       )
 </code></pre>
+            <code>sdcsd</code>
         </article>
 
     </div>

@@ -13,6 +13,7 @@ body{
     height: 1500px;
     background-color: rgba(255, 255, 255, 0.7);
     margin: 20px 40px;
+    overflow-x: hidden;
 }
 p{
     margin-top: 10px;
@@ -51,4 +52,19 @@ div.rotate_right
     -o-transform:rotate(-8deg); /* Opera */
     transform:rotate(-8deg);
     display: inline-block;
+}
+
+code{
+    -webkit-font-smoothing: antialiased!important;
+    -webkit-tap-highlight-color: transparent;
+    cursor: text;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    outline: none;
+    color: #000;
+    background-color: rgba(0,0,0,.05);
+    padding: 0 .25em;
+    border-radius: 3px;
+    font-size: 90%;
+    font-family: "JetBrains Mono", Courier,monospace;
 }
