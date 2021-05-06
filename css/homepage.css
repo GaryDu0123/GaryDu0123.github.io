@@ -1,6 +1,9 @@
 body{
     /*background-color: #4facfe;*/
     background-image: url("../img/art-bgimg.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+
 }
 .flexContainer {
     display: flex;
