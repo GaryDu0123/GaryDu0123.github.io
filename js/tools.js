@@ -121,15 +121,15 @@ function removeClass(obj, cn) {
  * 	如果元素中具有该类，则删除
  * 	如果元素中没有该类，则添加
  */
-function toggleClass(obj, cn) {
+function toggleClass(obj, element) {
 
-	//判断obj中是否含有cn
-	if(hasClass(obj, cn)) {
+	//判断obj中是否含有element
+	if(hasClass(obj, element)) {
 		//有，则删除
-		removeClass(obj, cn);
+		removeClass(obj, element);
 	} else {
 		//没有，则添加
-		addClass(obj, cn);
+		addClass(obj, element);
 	}
 
 }
