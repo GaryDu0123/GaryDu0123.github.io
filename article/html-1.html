@@ -6,22 +6,782 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="article.css">
     <link rel="stylesheet" href="./codeHeightLight/styles/default.css">
+    <link rel="stylesheet" href="../css/xform.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
     <script src="./codeHeightLight/highlight.pack.js"></script>
     <script>hljs.highlightAll();</script>
 
 <style type="text/css">
     .mainBox{
-        background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%);
+        height: 5000px;
+
+    }
+    span{
+        word-break:break-all;
+        font-family: "Microsoft YaHei", cursive;
+    }
+    #backToTop{
+        position: fixed;
+        right: 70px;
+        bottom: 60px;
+        display: none;
+        font-size: 40px;
+        line-height: 40px;
+        text-shadow: black 0.1em 0.1em 0.2em;
+        font-weight: bold;
+        color: #ffffff;
+
     }
 </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            window.onscroll = function () {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("backToTop").style.display = "block";
+                } else {
+                    document.getElementById("backToTop").style.display = "none";
+                }
+            };
 
+            const backToTop = document.getElementById("backToTop")
+            backToTop.onclick = function () {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+
+            }}
+    </script>
 </head>
 <body>
 <div class="mainBox">
+    <div id="backToTop" class="iconfont icon-Upward"></div>
     <!--        <pre><code></code></pre>-->
     <article>
-        <p>test</p>
-        <p>test</p>
+        <h1>HTML</h1>
+        <p>
+            <span class="font-size-normal"><b>Basic&nbsp;grammar&nbsp;overview</b></span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">HTML&nbsp;tags&nbsp;are&nbsp;keywords&nbsp;surrounded&nbsp;by&nbsp;angle&nbsp;brackets,&nbsp;such&nbsp;as&nbsp;&lt;html&gt;.</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">HTML&nbsp;tags&nbsp;usually&nbsp;appear&nbsp;in&nbsp;pairs,&nbsp;such&nbsp;as&nbsp;&lt;html&gt;&nbsp;and&nbsp;&lt;/html&gt;,&nbsp;which&nbsp;called&nbsp;double&nbsp;tags.&nbsp;The&nbsp;first&nbsp;tag&nbsp;in&nbsp;the&nbsp;tag&nbsp;pair&nbsp;is&nbsp;the&nbsp;start&nbsp;tag,&nbsp;and&nbsp;the&nbsp;second&nbsp;tag&nbsp;is&nbsp;the&nbsp;end&nbsp;tag.</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">Some&nbsp;special&nbsp;tags&nbsp;must&nbsp;be&nbsp;single&nbsp;tags&nbsp;(rare&nbsp;cases),&nbsp;such&nbsp;as&nbsp;&lt;br/&gt;,&nbsp;which&nbsp;called&nbsp;single&nbsp;tags.</span>
+        </p>
+        <p>
+            <span class="font-size-normal"><b>Label&nbsp;relationship</b></span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">Double-label&nbsp;relationships&nbsp;can&nbsp;be&nbsp;divided&nbsp;into&nbsp;two&nbsp;categories:&nbsp;containment&nbsp;relationships&nbsp;and&nbsp;parallel&nbsp;relationships.</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">Containment&nbsp;relationship</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">1&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;head&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">2&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;title&nbsp;&lt;/title&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">3&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;/head&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">Constellation</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">1&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;head&gt;&nbsp;&lt;/head&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">2&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;body&gt;&nbsp;&lt;/body&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal">Every&nbsp;web&nbsp;page&nbsp;will&nbsp;have&nbsp;a&nbsp;basic&nbsp;structure&nbsp;tag&nbsp;(also&nbsp;called&nbsp;a&nbsp;skeleton&nbsp;tag),&nbsp;and&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;page&nbsp;is&nbsp;also&nbsp;written&nbsp;on&nbsp;these&nbsp;basic&nbsp;tags</span>
+        </p>
+        <table class="table table-bordered table-hover" style="border-collapse:collapse;border-style:none;">
+            <tbody><tr>
+                <td width="25%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Label&nbsp;name</span>
+                    </p>
+                </td>
+                <td width="21%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">definition</span>
+                    </p>
+                </td>
+                <td width="53%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Description</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="25%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">&lt;html&gt;&lt;/html&gt;</span>
+                    </p>
+                </td>
+                <td width="21%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">HTML&nbsp;label</span>
+                    </p>
+                </td>
+                <td width="53%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">The&nbsp;largest&nbsp;label&nbsp;on&nbsp;the&nbsp;page,&nbsp;called&nbsp;root&nbsp;label</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="25%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">&lt;head&gt;&lt;/head&gt;</span>
+                    </p>
+                </td>
+                <td width="21%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Head&nbsp;of&nbsp;the&nbsp;document</span>
+                    </p>
+                </td>
+                <td width="53%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Note&nbsp;that&nbsp;the&nbsp;label&nbsp;we&nbsp;have&nbsp;to&nbsp;set&nbsp;in&nbsp;the&nbsp;head&nbsp;label&nbsp;is&nbsp;title</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="25%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">&lt;title&gt;&lt;/title&gt;</span>
+                    </p>
+                </td>
+                <td width="21%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Title&nbsp;of&nbsp;the&nbsp;document</span>
+                    </p>
+                </td>
+                <td width="53%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Let&nbsp;the&nbsp;page&nbsp;have&nbsp;its&nbsp;own&nbsp;page&nbsp;title&nbsp;(Can&nbsp;be&nbsp;seen&nbsp;at&nbsp;the&nbsp;top&nbsp;of&nbsp;the&nbsp;browser)</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="25%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">&lt;body&gt;&lt;/body&gt;</span>
+                    </p>
+                </td>
+                <td width="21%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Body&nbsp;of&nbsp;the&nbsp;document</span>
+                    </p>
+                </td>
+                <td width="53%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">The&nbsp;element&nbsp;contains&nbsp;all&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;document,&nbsp;and&nbsp;the&nbsp;page&nbsp;content&nbsp;is&nbsp;basically&nbsp;placed&nbsp;in&nbsp;the&nbsp;body</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="25%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">&lt;!DOCTYPE&nbsp;html&gt;</span>
+                    </p>
+                </td>
+                <td width="21%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Document&nbsp;type&nbsp;declaration</span>
+                    </p>
+                </td>
+                <td width="53%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Located&nbsp;in&nbsp;the&nbsp;frontmost&nbsp;position&nbsp;in&nbsp;the&nbsp;document,&nbsp;before&nbsp;the&nbsp;&lt;html&gt;&nbsp;tag</span>
+                    </p>
+                </td>
+            </tr>
+            </tbody></table>
+        <p>
+            <span class="font-size-normal"><b>Title&nbsp;tag&nbsp;&lt;h1&gt;-&lt;h6&gt;</b></span>
+        </p>
+        <p>
+            <span class="font-size-normal">In&nbsp;order&nbsp;to&nbsp;make&nbsp;the&nbsp;web&nbsp;page&nbsp;more&nbsp;semantic,&nbsp;the&nbsp;title&nbsp;tag&nbsp;is&nbsp;often&nbsp;used&nbsp;in&nbsp;the&nbsp;page.&nbsp;HTML&nbsp;provides&nbsp;6&nbsp;levels&nbsp;of&nbsp;page&nbsp;titles,&nbsp;namely&nbsp;&lt;h1&gt;-&lt;h6&gt;.</span>
+        </p>
+        <p>
+            <span class="font-size-normal"><b>Paragraph&nbsp;and&nbsp;line&nbsp;break&nbsp;tags</b></span>
+        </p>
+        <p>
+            <span class="font-size-normal">In&nbsp;a&nbsp;web&nbsp;page,&nbsp;to&nbsp;display&nbsp;text&nbsp;in&nbsp;an&nbsp;orderly&nbsp;manner,&nbsp;these&nbsp;texts&nbsp;need&nbsp;to&nbsp;be&nbsp;displayed&nbsp;in&nbsp;segments.&nbsp;In&nbsp;HTML&nbsp;tags,&nbsp;the&nbsp;&lt;p&gt;&nbsp;tag&nbsp;is&nbsp;used&nbsp;to&nbsp;define&nbsp;paragraphs.&nbsp;It&nbsp;can&nbsp;divide&nbsp;the&nbsp;entire&nbsp;web&nbsp;page&nbsp;into&nbsp;several&nbsp;paragraphs.</span>
+        </p>
+        <p>
+            <span class="font-size-normal"><b>Paragraph&nbsp;and&nbsp;line&nbsp;break&nbsp;tags</b></span>
+        </p>
+        <p>
+            <span class="font-size-normal">In&nbsp;HTML,&nbsp;the&nbsp;text&nbsp;in&nbsp;a&nbsp;paragraph&nbsp;will&nbsp;be&nbsp;arranged&nbsp;from&nbsp;left&nbsp;to&nbsp;right&nbsp;until&nbsp;the&nbsp;right&nbsp;end&nbsp;of&nbsp;the&nbsp;browser&nbsp;window,&nbsp;and&nbsp;then&nbsp;automatically&nbsp;wrap.&nbsp;If&nbsp;you&nbsp;want&nbsp;a&nbsp;certain&nbsp;text&nbsp;to&nbsp;be&nbsp;forced&nbsp;to&nbsp;wrap,&nbsp;you&nbsp;need&nbsp;to&nbsp;use&nbsp;the&nbsp;wrap&nbsp;tag&lt;br/&gt;.</span>
+        </p>
+        <p>
+            <span class="font-size-normal"><b>Text&nbsp;formatting&nbsp;tags</b></span>
+        </p>
+        <table class="table table-bordered table-hover" style="border-collapse:collapse;border-style:none;">
+            <tbody><tr>
+                <td width="30%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Semantics</span>
+                    </p>
+                </td>
+                <td width="70%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Tag&nbsp;name</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="30%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Bold</span>
+                    </p>
+                </td>
+                <td width="70%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">&lt;strong&gt;&lt;/strong&gt;</span><span class="font-size-normal">&nbsp;or&nbsp;</span><span class="font-size-normal">&lt;b&gt;&lt;/b&gt;</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="30%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Italic</span>
+                    </p>
+                </td>
+                <td width="70%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">&lt;em&gt;&lt;/em&gt;</span><span class="font-size-normal">&nbsp;or&nbsp;</span><span class="font-size-normal">&lt;i&gt;&lt;/i&gt;</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="30%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">delete</span>
+                    </p>
+                </td>
+                <td width="70%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">&lt;del&gt;&lt;/del&gt;</span><span class="font-size-normal">&nbsp;or&nbsp;</span><span class="font-size-normal">&lt;s&gt;&lt;/s&gt;</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="30%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">underline</span>
+                    </p>
+                </td>
+                <td width="70%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">&lt;ins&gt;&lt;/ins&gt;</span><span class="font-size-normal">&nbsp;or&nbsp;</span><span class="font-size-normal">&lt;u&gt;&lt;/u&gt;</span>
+                    </p>
+                </td>
+            </tr>
+            </tbody></table>
+        <p>
+            <span class="font-size-normal"><b>&lt;div&gt;&nbsp;and&nbsp;&lt;span&gt;&nbsp;tags</b></span>
+        </p>
+        <p>
+            <span class="font-size-normal">&lt;div&gt;&nbsp;and&nbsp;&lt;span&gt;&nbsp;have&nbsp;no&nbsp;semantics,&nbsp;they&nbsp;are&nbsp;just&nbsp;a&nbsp;box&nbsp;to&nbsp;hold&nbsp;content.</span>
+        </p>
+        <p>
+            <span class="font-size-normal">The&nbsp;div&nbsp;tag&nbsp;occupies&nbsp;one&nbsp;line(Block-level&nbsp;element),&nbsp;the&nbsp;following&nbsp;text&nbsp;is&nbsp;displayed&nbsp;on&nbsp;the&nbsp;next&nbsp;line,&nbsp;and&nbsp;the&nbsp;span&nbsp;is&nbsp;used&nbsp;to&nbsp;lay&nbsp;out&nbsp;on&nbsp;one&nbsp;line(Inline&nbsp;element)</span>
+        </p>
+        <p>
+            <span class="font-size-normal"><b>Image&nbsp;tag</b></span>
+        </p>
+        <p>
+            <span class="font-size-normal">In&nbsp;HTML&nbsp;tags,&nbsp;the&nbsp;&lt;img&gt;&nbsp;tag&nbsp;is&nbsp;used&nbsp;to&nbsp;define&nbsp;the&nbsp;image&nbsp;in&nbsp;the&nbsp;HTML&nbsp;page.</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">1&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;img&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">src</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"image&nbsp;URL"&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">alt</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"image&nbsp;name"</span><span class="font-size-normal" style="color:#ff3030;">/&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal"><b>Form&nbsp;label</b></span>
+        </p>
+        <p>
+            <span class="font-size-normal">Basic&nbsp;syntax&nbsp;of&nbsp;the&nbsp;table</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">1&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;table&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;tr&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;td&gt;</span><span class="font-size-normal" style="color:#330066;">&nbsp;text&nbsp;in&nbsp;table</span><span class="font-size-normal" style="color:#ff3030;">&lt;/td&gt;&nbsp;&lt;td&gt;</span><span class="font-size-normal" style="color:#330066;">&nbsp;text&nbsp;in&nbsp;table</span><span class="font-size-normal" style="color:#ff3030;">&lt;/td&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;/tr&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">5&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;/table&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal">In&nbsp;the&nbsp;table&nbsp;tags,&nbsp;use:&nbsp;the&nbsp;head&nbsp;area&nbsp;of&nbsp;the&nbsp;&lt;thead&gt;&nbsp;tag&nbsp;table&nbsp;and&nbsp;the&nbsp;main&nbsp;area&nbsp;of&nbsp;the&nbsp;&lt;tbody&gt;&nbsp;tag&nbsp;table.&nbsp;This&nbsp;can&nbsp;better&nbsp;distinguish&nbsp;the&nbsp;table&nbsp;structure.</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">&lt;thead&gt;&lt;/thead&gt;:&nbsp;Used&nbsp;to&nbsp;define&nbsp;the&nbsp;head&nbsp;of&nbsp;the&nbsp;table.&nbsp;&lt;thead&gt;&nbsp;must&nbsp;have&nbsp;a&nbsp;&lt;tr&gt;&nbsp;tag&nbsp;inside.&nbsp;It&nbsp;is&nbsp;generally&nbsp;</span><span class="font-size-normal"><b>located&nbsp;on&nbsp;the&nbsp;first&nbsp;line</b></span><span class="font-size-normal">.</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">&lt;tbody&gt;&lt;/tbody&gt;:&nbsp;Used&nbsp;to&nbsp;define&nbsp;the&nbsp;main&nbsp;body&nbsp;of&nbsp;the&nbsp;table,&nbsp;mainly&nbsp;used&nbsp;to&nbsp;put&nbsp;the&nbsp;data&nbsp;body.</span>
+        </p>
+        <p>
+            <span class="font-size-normal"><b>Little&nbsp;Demo&nbsp;of&nbsp;table</b></span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">1&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;html&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">lang</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"en"</span><span class="font-size-normal" style="color:#ff3030;">&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">2&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;head&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">3&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;meta&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">charset</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"UTF-8"</span><span class="font-size-normal" style="color:#ff3030;">&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">4&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;title&gt;</span><span class="font-size-normal" style="color:#330066;">table</span><span class="font-size-normal" style="color:#ff3030;">&lt;/title&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">5&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;/head&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">6&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;body&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">7&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;table&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">border</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"1"&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">cellpadding</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"20"&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">cellspacing</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"0"&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">width</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"20"</span><span class="font-size-normal" style="color:#ff3030;">&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">8&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;thead&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">9&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;tr&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">10&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;th&gt;</span><span class="font-size-normal" style="color:#330066;">name</span><span class="font-size-normal" style="color:#ff3030;">&lt;/th&gt;&nbsp;&lt;th&gt;</span><span class="font-size-normal" style="color:#330066;">gender</span><span class="font-size-normal" style="color:#ff3030;">&lt;/th&gt;&nbsp;&lt;th&gt;</span><span class="font-size-normal" style="color:#330066;">age</span><span class="font-size-normal" style="color:#ff3030;">&lt;/th&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">11&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;/tr&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">12&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;/thead&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">13&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;tbody&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">14&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;tr&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">15&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;td&gt;</span><span class="font-size-normal" style="color:#330066;">Gary</span><span class="font-size-normal" style="color:#ff3030;">&lt;/td&gt;&nbsp;&lt;td&gt;</span><span class="font-size-normal" style="color:#330066;">18</span><span class="font-size-normal" style="color:#ff3030;">&lt;/td&gt;&nbsp;&lt;td&gt;</span><span class="font-size-normal" style="color:#32ba06;">male</span><span class="font-size-normal" style="color:#ff3030;">&lt;/td&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">16&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;/tr&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">17&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;tr&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">18&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;td&gt;</span><span class="font-size-normal" style="color:#330066;">GuanyiDu</span><span class="font-size-normal" style="color:#ff3030;">&lt;/td&gt;&nbsp;&lt;td&gt;</span><span class="font-size-normal" style="color:#330066;">student</span><span class="font-size-normal" style="color:#ff3030;">&lt;/td&gt;&lt;td&gt;</span><span class="font-size-normal" style="color:#32ba06;">male</span><span class="font-size-normal" style="color:#ff3030;">&lt;/td&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">19&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;/tr&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">20&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;/tbody&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">21&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;/table&gt;</span>
+        </p>
+        <p>
+            <img class="img-responsive" src="data:image/png;base64,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">
+        </p>
+        <p>
+            <span class="font-size-normal"><b>Merge&nbsp;Cells</b></span>
+        </p>
+        <p>
+            <span class="font-size-normal">Merge&nbsp;across&nbsp;rows:&nbsp;rowspan="the&nbsp;number&nbsp;of&nbsp;merged&nbsp;cells"</span>
+        </p>
+        <p>
+            <span class="font-size-normal">Merge&nbsp;across&nbsp;columns:&nbsp;colspan="the&nbsp;number&nbsp;of&nbsp;merged&nbsp;cells"</span>
+        </p>
+        <p>
+            <span class="font-size-normal"><b>Target&nbsp;cell:&nbsp;(write&nbsp;merge&nbsp;code)</b></span>
+        </p>
+        <p>
+            <span class="font-size-normal">Cross&nbsp;line:&nbsp;The&nbsp;top&nbsp;cell&nbsp;is&nbsp;the&nbsp;target&nbsp;cell,&nbsp;write&nbsp;the&nbsp;merge&nbsp;code.</span>
+        </p>
+        <p>
+            <span class="font-size-normal">Cross&nbsp;column:&nbsp;the&nbsp;leftmost&nbsp;cell&nbsp;is&nbsp;the&nbsp;target&nbsp;cell,&nbsp;write&nbsp;the&nbsp;merge&nbsp;code.</span>
+        </p>
+        <p>
+            <span class="font-size-normal"><b>List&nbsp;label</b></span>
+        </p>
+        <p>
+            <span class="font-size-normal">Unordered&nbsp;list</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">The&nbsp;&lt;ul&gt;&nbsp;tag&nbsp;represents&nbsp;an&nbsp;unordered&nbsp;list&nbsp;of&nbsp;items&nbsp;in&nbsp;the&nbsp;HTML&nbsp;page.&nbsp;Generally,&nbsp;the&nbsp;list&nbsp;items&nbsp;are&nbsp;presented&nbsp;in&nbsp;bullets,&nbsp;and&nbsp;the&nbsp;list&nbsp;items&nbsp;are&nbsp;defined&nbsp;by&nbsp;the&nbsp;&lt;li&gt;&nbsp;tag.</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">1&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;ul&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">2&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;li&gt;</span><span class="font-size-normal" style="color:#330066;">list&nbsp;items&nbsp;</span><span class="font-size-normal" style="color:#32ba06;">1</span><span class="font-size-normal" style="color:#ff3030;">&lt;/li&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">3&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;li&gt;</span><span class="font-size-normal" style="color:#330066;">list&nbsp;items&nbsp;</span><span class="font-size-normal" style="color:#32ba06;">2</span><span class="font-size-normal" style="color:#ff3030;">&lt;/li&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">4&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;li&gt;</span><span class="font-size-normal" style="color:#330066;">list&nbsp;items&nbsp;</span><span class="font-size-normal" style="color:#32ba06;">3</span><span class="font-size-normal" style="color:#ff3030;">&lt;/li&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">5&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;/ul&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal">1.&nbsp;The&nbsp;items&nbsp;in&nbsp;the&nbsp;unordered&nbsp;list&nbsp;have&nbsp;no&nbsp;order&nbsp;levels,&nbsp;and&nbsp;they&nbsp;are&nbsp;parallel.</span>
+        </p>
+        <p>
+            <span class="font-size-normal">2.&nbsp;Only&nbsp;&lt;li&gt;&lt;li&gt;&nbsp;can&nbsp;be&nbsp;nested&nbsp;in&nbsp;&lt;ul&gt;&lt;u&gt;.&nbsp;It&nbsp;is&nbsp;not&nbsp;allowed&nbsp;to&nbsp;directly&nbsp;enter&nbsp;other&nbsp;tags&nbsp;or&nbsp;text&nbsp;in&nbsp;the&nbsp;&lt;ul&gt;&lt;/ul&gt;&nbsp;tag.</span>
+        </p>
+        <p>
+            <span class="font-size-normal">3.&nbsp;The&nbsp;space&nbsp;between&nbsp;&lt;li&gt;&nbsp;and&nbsp;&lt;/li&gt;&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;a&nbsp;container,&nbsp;which&nbsp;can&nbsp;hold&nbsp;all&nbsp;elements.</span>
+        </p>
+        <p>
+            <span class="font-size-normal">Unordered&nbsp;lists&nbsp;have&nbsp;their&nbsp;own&nbsp;properties,&nbsp;but&nbsp;in&nbsp;actual&nbsp;use,&nbsp;they&nbsp;will&nbsp;be&nbsp;set&nbsp;using&nbsp;CSS</span>
+        </p>
+        <p>
+            <span class="font-size-normal">Ordered&nbsp;list</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">In&nbsp;HTML&nbsp;tags,&nbsp;the&nbsp;&lt;ol&gt;&nbsp;tag&nbsp;is&nbsp;used&nbsp;to&nbsp;define&nbsp;an&nbsp;ordered&nbsp;list,&nbsp;the&nbsp;list&nbsp;sorting&nbsp;is&nbsp;displayed&nbsp;in&nbsp;numbers,&nbsp;and&nbsp;the&nbsp;&lt;li&gt;&nbsp;tag&nbsp;is&nbsp;used&nbsp;to&nbsp;define&nbsp;the&nbsp;list&nbsp;items.</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">The&nbsp;basic&nbsp;properties&nbsp;are&nbsp;the&nbsp;same&nbsp;as&nbsp;Unordered&nbsp;list.</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">1&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;</span><span class="font-size-normal" style="color:#fa0000;">ol</span><span class="font-size-normal" style="color:#ff3030;">&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">2&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;li&gt;</span><span class="font-size-normal" style="color:#330066;">&nbsp;list&nbsp;items&nbsp;</span><span class="font-size-normal" style="color:#32ba06;">1</span><span class="font-size-normal" style="color:#ff3030;">&lt;/li&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">3&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;li&gt;</span><span class="font-size-normal" style="color:#330066;">&nbsp;list&nbsp;items&nbsp;</span><span class="font-size-normal" style="color:#32ba06;">2</span><span class="font-size-normal" style="color:#ff3030;">&lt;/li&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">4&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;li&gt;</span><span class="font-size-normal" style="color:#330066;">&nbsp;list&nbsp;items&nbsp;</span><span class="font-size-normal" style="color:#32ba06;">3</span><span class="font-size-normal" style="color:#ff3030;">&lt;/li&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">5&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;/</span><span class="font-size-normal" style="color:#fa0000;">ol</span><span class="font-size-normal" style="color:#ff3030;">&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal">Custom&nbsp;list</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">Custom&nbsp;lists&nbsp;are&nbsp;often&nbsp;used&nbsp;to&nbsp;explain&nbsp;and&nbsp;describe&nbsp;terms&nbsp;or&nbsp;nouns.&nbsp;There&nbsp;are&nbsp;no&nbsp;bullets&nbsp;before&nbsp;the&nbsp;list&nbsp;items&nbsp;in&nbsp;the&nbsp;definition&nbsp;list.</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">In&nbsp;HTML&nbsp;tags,&nbsp;the&nbsp;&lt;dl&gt;&nbsp;tag&nbsp;is&nbsp;used&nbsp;to&nbsp;define&nbsp;the&nbsp;description&nbsp;list&nbsp;(or&nbsp;definition&nbsp;list).&nbsp;This&nbsp;tag&nbsp;will&nbsp;be&nbsp;used&nbsp;together&nbsp;with&nbsp;&lt;dt&gt;&nbsp;(define&nbsp;item/name)&nbsp;and&nbsp;&lt;dd&gt;&nbsp;(describe&nbsp;each&nbsp;item/name).</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">1&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;dl&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">2&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;dt&gt;</span><span class="font-size-normal" style="color:#330066;">nouns&nbsp;</span><span class="font-size-normal" style="color:#32ba06;">1</span><span class="font-size-normal" style="color:#ff3030;">&lt;/dt&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">3&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;dd&gt;</span><span class="font-size-normal" style="color:#330066;">&nbsp;nouns</span><span class="font-size-normal" style="color:#32ba06;">&nbsp;1</span><span class="font-size-normal" style="color:#330066;">&nbsp;describe</span><span class="font-size-normal" style="color:#32ba06;">&nbsp;1</span><span class="font-size-normal" style="color:#ff3030;">&lt;/dd&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">4&nbsp;</span><span class="font-size-normal" style="color:#330066;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;dd&gt;</span><span class="font-size-normal" style="color:#330066;">&nbsp;nouns</span><span class="font-size-normal" style="color:#32ba06;">&nbsp;1&nbsp;</span><span class="font-size-normal" style="color:#330066;">describe</span><span class="font-size-normal" style="color:#32ba06;">2</span><span class="font-size-normal" style="color:#ff3030;">&lt;/dd&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">5&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;/dl&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal">1.&nbsp;&lt;d&gt;&lt;/dl&gt;&nbsp;can&nbsp;only&nbsp;contain&nbsp;&lt;dt&gt;&nbsp;and&nbsp;&lt;dd&gt;.</span>
+        </p>
+        <p>
+            <span class="font-size-normal">2.&nbsp;There&nbsp;is&nbsp;no&nbsp;limit&nbsp;to&nbsp;the&nbsp;number&nbsp;of&nbsp;&lt;dt&gt;&nbsp;and&nbsp;&lt;dd&gt;,&nbsp;often&nbsp;one&nbsp;&lt;dt&gt;&nbsp;corresponds&nbsp;to&nbsp;multiple&nbsp;&lt;dd&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal"><b>Form</b></span>
+        </p>
+        <p>
+            <span class="font-size-normal">In&nbsp;HTML,&nbsp;a&nbsp;complete&nbsp;form&nbsp;usually&nbsp;consists&nbsp;of&nbsp;three&nbsp;parts:&nbsp;form&nbsp;controls&nbsp;(also&nbsp;called&nbsp;form&nbsp;elements),&nbsp;prompt&nbsp;information,&nbsp;and&nbsp;form&nbsp;fields.&nbsp;The&nbsp;purpose&nbsp;of&nbsp;the&nbsp;form&nbsp;is&nbsp;to&nbsp;collect&nbsp;user&nbsp;information.</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">Form&nbsp;controls:</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">Contains&nbsp;specific&nbsp;form&nbsp;function&nbsp;items,&nbsp;such&nbsp;as&nbsp;single-line&nbsp;text&nbsp;input&nbsp;box,&nbsp;password&nbsp;input&nbsp;box,&nbsp;check&nbsp;box,&nbsp;submit&nbsp;button,&nbsp;reset&nbsp;button,&nbsp;etc.</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">Prompt&nbsp;information:</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">A&nbsp;form&nbsp;usually&nbsp;needs&nbsp;to&nbsp;contain&nbsp;some&nbsp;descriptive&nbsp;text&nbsp;to&nbsp;prompt&nbsp;the&nbsp;user&nbsp;to&nbsp;fill&nbsp;in&nbsp;and&nbsp;operate.</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">Form&nbsp;field:</span>
+        </p>
+        <p>
+            <span class="font-size-small">●</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal">It&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;a&nbsp;container,&nbsp;which&nbsp;is&nbsp;used&nbsp;to&nbsp;hold&nbsp;all&nbsp;the&nbsp;form&nbsp;controls&nbsp;and&nbsp;prompt&nbsp;information.&nbsp;It&nbsp;can&nbsp;define&nbsp;the&nbsp;URL&nbsp;address&nbsp;of&nbsp;the&nbsp;program&nbsp;used&nbsp;to&nbsp;process&nbsp;the&nbsp;form&nbsp;data&nbsp;and&nbsp;the&nbsp;method&nbsp;of&nbsp;submitting&nbsp;the&nbsp;data&nbsp;to&nbsp;the&nbsp;server.&nbsp;If&nbsp;the&nbsp;form&nbsp;fields&nbsp;are&nbsp;not&nbsp;defined,&nbsp;the&nbsp;data&nbsp;in&nbsp;the&nbsp;form&nbsp;cannot&nbsp;be&nbsp;transmitted&nbsp;to&nbsp;the&nbsp;background&nbsp;server.</span>
+        </p>
+        <p>
+            <span class="font-size-normal">Input</span><span class="font-size-normal">&nbsp;control:</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">1&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;input</span><span class="font-size-normal" style="color:#330066;">&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">type</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"</span><span class="font-size-normal">&nbsp;</span><span class="font-size-normal" style="color:#1861a7;">Attribute&nbsp;value&nbsp;"</span><span class="font-size-normal" style="color:#330066;">&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">value</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"hello"</span><span class="font-size-normal" style="color:#ff3030;">&gt;</span>
+        </p>
+        <table class="table table-bordered table-hover" style="border-collapse:collapse;border-style:none;">
+            <tbody><tr>
+                <td width="34%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-medium">Attribute</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-medium">Attribute&nbsp;value</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-medium">Describe</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="9" width="34%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-medium">Type</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-medium">text</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Single&nbsp;line&nbsp;text&nbsp;input&nbsp;box</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-medium">password</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Password&nbsp;input&nbsp;box</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-medium">radio</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">single&nbsp;button</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-medium">checkbox</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Checkbox</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-medium">button</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Normal&nbsp;button</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-medium">submit</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Submit&nbsp;button</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-medium">reset</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Reset&nbsp;button</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-medium">image</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Submit&nbsp;button&nbsp;in&nbsp;image&nbsp;form</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-medium">file</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">File&nbsp;domain</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="34%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-normal">name</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-normal">Customized&nbsp;by&nbsp;the&nbsp;user</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">The&nbsp;name&nbsp;of&nbsp;the&nbsp;control</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="34%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-normal">value</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-normal">Customized&nbsp;by&nbsp;the&nbsp;user</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">The&nbsp;default&nbsp;text&nbsp;value&nbsp;in&nbsp;the&nbsp;input&nbsp;control</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="34%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-normal">size</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-normal">Positive&nbsp;integer</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">The&nbsp;display&nbsp;width&nbsp;of&nbsp;the&nbsp;input&nbsp;control&nbsp;on&nbsp;the&nbsp;page</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="34%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-normal">checked</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-normal">checked</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Define&nbsp;the&nbsp;items&nbsp;that&nbsp;are&nbsp;selected&nbsp;by&nbsp;default&nbsp;in&nbsp;the&nbsp;select&nbsp;control</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="34%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-normal">maxlength</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p style="text-align:center;">
+                        <span class="font-size-normal">Positive&nbsp;integer</span>
+                    </p>
+                </td>
+                <td width="33%" style="border-width:1px;border-style:solid;border-color:#000000;">
+                    <p>
+                        <span class="font-size-normal">Maximum&nbsp;number&nbsp;of&nbsp;characters&nbsp;allowed&nbsp;in&nbsp;the&nbsp;control</span>
+                    </p>
+                </td>
+            </tr>
+            </tbody></table>
+        <p>
+            <span class="font-size-normal"><b>&lt;label&gt;&nbsp;label</b></span>
+        </p>
+        <p>
+            <span class="font-size-normal">The&nbsp;&lt;label&gt;&nbsp;tag&nbsp;defines&nbsp;a&nbsp;label&nbsp;(label)&nbsp;for&nbsp;the&nbsp;input&nbsp;element.</span>
+        </p>
+        <p>
+            <span class="font-size-normal">The&nbsp;&lt;label&gt;&nbsp;tag&nbsp;is&nbsp;used&nbsp;to&nbsp;bind&nbsp;a&nbsp;form&nbsp;element.&nbsp;When&nbsp;click&nbsp;on&nbsp;the&nbsp;text&nbsp;in&nbsp;the&nbsp;&lt;label&gt;&nbsp;tag,&nbsp;the&nbsp;browser&nbsp;will&nbsp;automatically&nbsp;turn&nbsp;the&nbsp;focus&nbsp;(cursor)&nbsp;to&nbsp;or&nbsp;select&nbsp;the&nbsp;corresponding&nbsp;form&nbsp;element&nbsp;to&nbsp;increase&nbsp;the&nbsp;user&nbsp;experience.</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">1&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;label&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">for</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"sex"</span><span class="font-size-normal" style="color:#ff3030;">&gt;</span><span class="font-size-normal" style="color:#330066;">male</span><span class="font-size-normal" style="color:#ff3030;">&lt;/label&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal" style="color:#979797;">2&nbsp;</span><span class="font-size-normal" style="color:#ff3030;">&lt;input&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">type</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"radio"&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">name</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"sex"&nbsp;</span><span class="font-size-normal" style="color:#f48c23;">id</span><span class="font-size-normal" style="color:#330066;">=</span><span class="font-size-normal" style="color:#1861a7;">"sex"</span><span class="font-size-normal" style="color:#ff3030;">/&gt;</span>
+        </p>
+        <p>
+            <span class="font-size-normal"><b>&lt;textarea&gt;&nbsp;form&nbsp;element</b></span>
+        </p>
+        <p>
+            <span class="font-size-normal">Usage&nbsp;scenario:&nbsp;When&nbsp;the&nbsp;user&nbsp;enters&nbsp;a&nbsp;lot&nbsp;of&nbsp;content,&nbsp;we&nbsp;can't&nbsp;use&nbsp;the&nbsp;text&nbsp;box&nbsp;form.&nbsp;At&nbsp;this&nbsp;time,&nbsp;we&nbsp;can&nbsp;use&nbsp;the&nbsp;&lt;textarea&gt;&nbsp;tag.&nbsp;In&nbsp;form&nbsp;elements,&nbsp;the&nbsp;&lt;textarea&gt;&nbsp;tag&nbsp;is&nbsp;a&nbsp;control&nbsp;used&nbsp;to&nbsp;define&nbsp;multi-line&nbsp;text&nbsp;input.</span>
+        </p>
+        <p>
+            <span class="font-size-normal">Use&nbsp;the&nbsp;multi-line&nbsp;text&nbsp;input&nbsp;control&nbsp;to&nbsp;enter&nbsp;more&nbsp;text.&nbsp;This&nbsp;control&nbsp;is&nbsp;common&nbsp;in&nbsp;message&nbsp;boards&nbsp;and&nbsp;comments.</span>
+        </p>
     </article>
 
 </div>

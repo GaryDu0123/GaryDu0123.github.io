@@ -8,11 +8,178 @@
 <link rel="stylesheet" href="../css/iconfont.css">
 <link rel="stylesheet" href="./codeHeightLight/styles/hybrid.css">
 <script src="./codeHeightLight/highlight.pack.js"></script>
+<link rel="stylesheet" href="../font/font-awesome-4.7.0/css/font-awesome.min.css">
 <style type="text/css">
     time{
-        margin: 40px;
+        /*position: absolute;*/
+        /*top: 200px;*/
+        /*left: 400px;*/
+        /*margin: 0 0 0 200px;*/
+        font-size: 90px;
+
+    }
+    .containPolaroid{
+        display: inline-block;
+        height: 320px;
+        width: 330px;
+
+    }
+    .time{
+        /*height: 300px;*/
+        /*width: 300px;*/
+        /*padding-top: 200px;*/
+        /*background-color: #4facfe;*/
+        /*float: right;*/
+        display: inline-block;
+        text-align: center;
+        line-height: 300px;
+        margin-left: 200px;
+        margin-bottom: -100px;
+    }
+    div.polaroid
+    {
+        width:294px;
+        padding:10px 10px 20px 10px;
+        border:1px solid #BFBFBF;
+        background-color:white;
+        /* Add box-shadow */
+        box-shadow:2px 2px 3px #aaaaaa;
+        display: inline-block;
+    }
+
+
+    div.rotate_right
+    {
+        /*float:left;*/
+        -ms-transform:rotate(-8deg); /* IE 9 */
+        -moz-transform:rotate(-8deg); /* Firefox */
+        -webkit-transform:rotate(-8deg); /* Safari and Chrome */
+        -o-transform:rotate(-8deg); /* Opera */
+        transform:rotate(-8deg);
+        display: inline-block;
+    }
+    .boxa ul {
+        /*margin-left: 40px;*/
+        padding: 0;
+        display: flex;
+        justify-content:space-evenly;
+        flex-direction: row-reverse;
+    }
+
+    .boxa ul li {
+        list-style: none;
+    }
+
+    .boxa li a {
+        /* 这里图标是字体形式放进去的所以我们要修改的是字体的大小 */
+        font-size: 40px;
+        color: #575252;
+        text-decoration: none;
+        transition: all ease-in-out 300ms;
+    }
+
+
+    /* 最后加一个动画,其实很简单 */
+
+    .boxa li a:hover {
+        color: #b9b9b9;
+    }
+    #outer{
+
+        /*设置宽和高*/
+        width: 820px;
+        height: 450px;
+        /*居中*/
+        margin: 40px auto 0;
+        /*设置背景颜色*/
+        /*background-color: greenyellow;*/
+        /*设置padding*/
+        padding: 10px 0;
+        /*开启相对定位*/
+        position: relative;
+        /*裁剪溢出的内容*/
+        overflow: hidden;
+        box-shadow: black 0 0 40px;
+        transition: box-shadow 0.5s;
+    }
+    #outer:hover{
+        box-shadow: #00b0e8 0 0 40px;
+        transition: box-shadow 0.5s;
+    }
+
+    /*设置imgList*/
+    #imgList{
+        /*去除项目符号*/
+        list-style: none;
+        /*设置ul的宽度*/
+        /*width: 2600px;*/
+        /*开启绝对定位*/
+        position: absolute;
+        /*设置偏移量*/
+        /*
+         * 每向左移动520px，就会显示到下一张图片
+         */
+        left: 0px;
+    }
+
+    /*设置图片中的li*/
+    #imgList li{
+        /*设置浮动*/
+        float: left;
+        /*设置左右外边距*/
+        margin: 0 10px;
+
+    }
+    #imgList li img{
+        width: 800px;
+
+        /*height: 333px;*/
+        /*overflow: hidden;*/
+        /*background-repeat: no-repeat;*/
+
+        /*display:block;*/
+        /*width:100%;*/
+        /*heigth:300px;*/
+        /*object-fit:cover*/
+
+    }
+    /*设置导航按钮*/
+    #navDiv{
+        /*开启绝对定位*/
+        position: absolute;
+        /*设置位置*/
+        bottom: 15px;
+        /*设置left值
+             outer宽度  520
+             navDiv宽度 25*5 = 125
+                 520 - 125 = 395/2 = 197.5
+         * */
+        /*left: 197px;*/
+    }
+
+    #navDiv a{
+        /*设置超链接浮动*/
+        float: left;
+        /*设置超链接的宽和高*/
+        width: 15px;
+        height: 15px;
+        /*设置背景颜色*/
+        background-color: #00f9ff;
+        box-shadow: black 0 0 10px;
+        /*设置左右外边距*/
+        margin: 0 5px;
+        /*设置透明*/
+        opacity: 0.5;
+        /*兼容IE8透明*/
+        filter: alpha(opacity=50);
+    }
+
+    /*设置鼠标移入的效果*/
+    #navDiv a:hover{
+        background-color: black;
     }
 </style>
+<script type="text/javascript" src="../js/tools.js"></script>
 <script type="text/javascript">
     window.onload = function () {
         window.onscroll = function () {
@@ -47,6 +214,117 @@
             const time = document.getElementsByTagName("time")[0];
             time.innerHTML = time_now
         }, 1000/60)
+        var imgList = document.getElementById("imgList");
+        //获取页面中所有的img标签
+        var imgArr = document.getElementsByClassName("carouselPic");
+        //设置imgList的宽度
+        imgList.style.width = 820*imgArr.length+"px";
+
+
+        /*设置导航按钮居中*/
+        //获取navDiv
+        var navDiv = document.getElementById("navDiv");
+        //获取outer
+        var outer = document.getElementById("outer");
+        //设置navDiv的left值
+        navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth)/2 + "px";
+
+        //默认显示图片的索引
+        var index = 0;
+        //获取所有的a
+        var allA = document.getElementsByClassName("navA");
+        //设置默认选中的效果
+        allA[index].style.backgroundColor = "black";
+
+        /*
+             点击超链接切换到指定的图片
+                 点击第一个超链接，显示第一个图片
+                 点击第二个超链接，显示第二个图片
+         * */
+
+        //为所有的超链接都绑定单击响应函数
+        for(var i=0; i<allA.length ; i++){
+
+            //为每一个超链接都添加一个num属性
+            allA[i].num = i;
+
+            //为超链接绑定单击响应函数
+            allA[i].onclick = function(){
+
+                //关闭自动切换的定时器
+                clearInterval(timer);
+                //获取点击超链接的索引,并将其设置为index
+                index = this.num;
+
+                //切换图片
+                /*
+                 * 第一张  0 0
+                 * 第二张  1 -520
+                 * 第三张  2 -1040
+                 */
+                //imgList.style.left = -520*index + "px";
+                //设置选中的a
+                setA();
+
+                //使用move函数来切换图片
+                move(imgList , "left" , -820*index , 20 , function(){
+                    //动画执行完毕，开启自动切换
+                    autoChange();
+                });
+
+            };
+        }
+
+
+        //开启自动切换图片
+        autoChange();
+
+
+        //创建一个方法用来设置选中的a
+        function setA(){
+
+            //判断当前索引是否是最后一张图片
+            if(index >= imgArr.length - 1){
+                //则将index设置为0
+                index = 0;
+
+                //此时显示的最后一张图片，而最后一张图片和第一张是一摸一样
+                //通过CSS将最后一张切换成第一张
+                imgList.style.left = 0;
+            }
+
+            //遍历所有a，并将它们的背景颜色设置为红色
+            for(var i=0 ; i<allA.length ; i++){
+                allA[i].style.backgroundColor = "";
+            }
+
+            //将选中的a设置为黑色
+            allA[index].style.backgroundColor = "black";
+        };
+
+        //定义一个自动切换的定时器的标识
+        var timer;
+        //创建一个函数，用来开启自动切换图片
+        function autoChange(){
+
+            //开启一个定时器，用来定时去切换图片
+            timer = setInterval(function(){
+
+                //使索引自增
+                index++;
+
+                //判断index的值
+                index %= imgArr.length;
+
+                //执行动画，切换图片
+                move(imgList , "left" , -820*index , 20 , function(){
+                    //修改导航按钮
+                    setA();
+                });
+
+            },3000);
+
+        }
     }
 </script>
 <script>hljs.highlightAll();</script>
@@ -55,36 +333,63 @@
     <div class="mainBox">
 
         <article>
-            <p>test</p>
-            <p>test</p>
-            <div class="polaroid rotate_right">
-                <img alt="chino" height="140" src="../img/chino.GIF" width="139" style="zoom: 150%"/>
-                <p class="caption">chino</p>
+<!--            <p>test</p>-->
+<!--            <p>test</p>-->
+            <div class="containPolaroid">
+                <div class="polaroid rotate_right">
+                    <img alt="chino" height="140" src="../img/chino.GIF" width="139" style="zoom: 150%"/>
+                    <p class="caption">chino</p>
+                </div>
             </div>
-            <time></time>
-            <pre><code class="lang-python codeHighlight">import math
+            <div class="time">
+                <time></time>
+            </div>
+            <div></div>
 
-print('''\033[1;37;40m   Only in R^3  \033[0m
-\033[1;37;40mu = [u1, u2, u3]\033[0m
-\033[1;37;40mv = [v1, v2, v3]\033[0m''')
-u1 = int(input("u1 ").strip())
-u2 = int(input("u2 ").strip())
-u3 = int(input("u3 ").strip())
-b1 = int(input("v1 ").strip())
-b2 = int(input("v2 ").strip())
-b3 = int(input("v3 ").strip())
-dot = u1 * b1 + u2 * b2 + u3 * b3
-cross = u2 * b3 - u3 * b2, u3 * b1 - b3 * u1, u1 * b2 - u2 * b1  # Generate a tuple
-print("dot\t", dot, "\t\033[1;31;40mOrthogonal\033[0m " if dot == 0 else "")
-print("cross\t", cross, "\t\033[1;31;40mparallel\033[0m " if not any(cross) else "")
-print("Length", math.sqrt((u2 * b3 - u3 * b2) ** 2
-                          + (u3 * b1 - b3 * u1) ** 2
-                          + (u1 * b2 - u2 * b1) ** 2)
-      )
-</code></pre>
+            <div class="boxa">
+
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/guanyi.du.7792" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i> </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/GaryDu0123/GaryDu0123.github.io" target="_blank"><i class="fa fa-git-square" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                    </li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <div id="outer">
+                <!-- 创建一个ul，用于放置图片 -->
+                <ul id="imgList">
+                    <li><img class="carouselPic" src="../img/carousel/1.jpg"/></li>
+                    <li><img class="carouselPic" src="../img/carousel/2.jpg"/></li>
+                    <li><img class="carouselPic" src="../img/carousel/3.jpg"/></li>
+                    <li><img class="carouselPic" src="../img/carousel/4.jpg"/></li>
+                    <li><img class="carouselPic" src="../img/carousel/5.jpg"/></li>
+                    <li><img class="carouselPic" src="../img/carousel/1.jpg"/></li>
+                </ul>
+                <!--创建导航按钮-->
+                <div id="navDiv">
+                    <a class="navA" href="javascript:"></a>
+                    <a class="navA" href="javascript:"></a>
+                    <a class="navA" href="javascript:"></a>
+                    <a class="navA" href="javascript:"></a>
+                    <a class="navA" href="javascript:"></a>
+                </div>
+            </div>
+            <article>
+                hiashcoasncoanc
+            </article>
             <code>sdcsd</code>
         </article>
-
     </div>
 
 <div id="backToTop" class="iconfont icon-Upward"></div>
