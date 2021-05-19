@@ -5,8 +5,50 @@
     <title>Myself</title>
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="article.css">
+<link rel="stylesheet" href="../css/iconfont.css">
 <link rel="stylesheet" href="./codeHeightLight/styles/hybrid.css">
 <script src="./codeHeightLight/highlight.pack.js"></script>
+<style type="text/css">
+    time{
+        margin: 40px;
+    }
+</style>
+<script type="text/javascript">
+    window.onload = function () {
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("backToTop").style.display = "block";
+            } else {
+                document.getElementById("backToTop").style.display = "none";
+            }
+        };
+
+        const backToTop = document.getElementById("backToTop")
+        backToTop.onclick = function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+
+        }
+        setInterval(function() {
+            const date = new Date();
+            let hour = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+            if (hour<10){
+                hour = "0"+ hour
+            }
+            if (min<10){
+                min = "0"+ min
+            }
+            if (sec<10){
+                sec = "0"+ sec
+            }
+            const time_now = `${hour} : ${min} : ${sec}`;
+            const time = document.getElementsByTagName("time")[0];
+            time.innerHTML = time_now
+        }, 1000/60)
+    }
+</script>
 <script>hljs.highlightAll();</script>
 </head>
 <body>
@@ -19,6 +61,7 @@
                 <img alt="chino" height="140" src="../img/chino.GIF" width="139" style="zoom: 150%"/>
                 <p class="caption">chino</p>
             </div>
+            <time></time>
             <pre><code class="lang-python codeHighlight">import math
 
 print('''\033[1;37;40m   Only in R^3  \033[0m
@@ -43,5 +86,7 @@ print("Length", math.sqrt((u2 * b3 - u3 * b2) ** 2
         </article>
 
     </div>
+
+<div id="backToTop" class="iconfont icon-Upward"></div>
 </body>
 </html>

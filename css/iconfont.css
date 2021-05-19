@@ -1,13 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2526674 */
-  src: url('iconfont.woff2?t=1620151390028') format('woff2'),
-       url('iconfont.woff?t=1620151390028') format('woff'),
-       url('iconfont.ttf?t=1620151390028') format('truetype');
-}
-
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("../font/JetBrainsMono[wght].ttf");
+  src: url('iconfont.woff2?t=1621392140775') format('woff2'),
+       url('iconfont.woff?t=1621392140775') format('woff'),
+       url('iconfont.ttf?t=1621392140775') format('truetype');
 }
 
 .iconfont {
@@ -18,33 +13,60 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-huidaodingbuxianxing:before {
+  content: "\e610";
+}
+
+.icon-shangyishoushangyige:before {
+  content: "\e78a";
+}
+
+.icon-xiayigexiayishou:before {
+  content: "\e7a5";
+}
+
+.icon-huidaodingbu:before {
+  content: "\e619";
+}
+
+.icon-Upward:before {
+  content: "\e61e";
+}
+
+.icon-upward:before {
+  content: "\e61f";
+}
+
+.icon-48shangyishou:before {
+  content: "\e611";
+}
+
+.icon-047caozuo_shangyishou:before {
+  content: "\e620";
+}
+
+.icon-xiayishou_huaban:before {
+  content: "\e636";
+}
+
 .icon-yinyue:before {
   content: "\e680";
-  color: #eeeeee;
-  font-size: 30px;
-  position: absolute;
-  right: 50px;
-  bottom: 50px;
 }
 
 .icon-weibiaoti--:before {
   content: "\e60f";
-  font-size: 40px;
 }
 
 .icon-visible:before {
   content: "\e711";
-  font-size: 20px;
 }
-
 
 .icon-visible1:before {
   content: "\e6a2";
-  font-size: 20px;
 }
 
 .icon-nickname:before {
   content: "\e6a0";
-  font-size: 20px;
+  /*font-size: 18px;*/
 }
 

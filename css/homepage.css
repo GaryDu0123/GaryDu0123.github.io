@@ -138,3 +138,82 @@ div.sdmenu div a:hover {
     width: 100%;
 }
 
+.musicBar{
+    height: 100px;
+    width: 400px;
+    /*background-color: red;*/
+    background-image: url("../img/musicBar/musicBar1.PNG");
+    /*background-size: 1600px;*/
+    transition:background-image 0.5s ease-in-out;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    box-shadow: 0 0 35px black;
+    bottom: 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    /*left: -350px*/
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+    overflow: hidden;
+    /*left: 0px;*/
+}
+.musicBar{
+    transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s; /* Firefox 4 */
+    -webkit-transition-duration: 0.2s; /* Safari 和 Chrome */
+    -o-transition-duration: 0.2s; /* Opera */
+}
+
+
+div.musicButton {
+    /*display: inline-block;*/
+    height: 50px;
+    line-height: 50px;
+    /*width: 50px;*/
+    /*position: relative;*/
+    /*background-color: #d4fc79;*/
+    margin-right: 45px;
+    flex-direction: column;
+    flex: 0 0 50px;
+    font-size: 36px;
+    color: white;
+    font-weight: 550;
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+#musicClickBar{
+    height: 100px;
+    /*width: 50px;*/
+    /*position: relative;*/
+    background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);
+    /*margin-left: 30px;*/
+    flex-direction: column;
+    flex: 0 0 50px;
+    order: 99;
+}
+
+#musicClickBar:hover{
+    /*transition: background-image 5s ease-in-out;*/
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+
+}
+
+.fold{
+    left: -350px
+}
+.iconfont:hover{
+    font-size: 40px;
+    transition: font-size 0.2s;
+    -moz-transition: font-size 0.2s; /* Firefox 4 */
+    -webkit-transition: font-size 0.2s; /* Safari 和 Chrome */
+    -o-transition: font-size 0.2s; /* Opera */
+}
+.iconfont:active{
+    font-size: 36px;
+    transition: font-size 0.2s;
+    -moz-transition: font-size 0.2s; /* Firefox 4 */
+    -webkit-transition: font-size 0.2s; /* Safari 和 Chrome */
+    -o-transition: font-size 0.2s; /* Opera */
+}

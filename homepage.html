@@ -5,12 +5,12 @@
     <title>homepage</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="css/homepage.css">
-
+    <link rel="stylesheet" href="css/iconfont.css" />
 </head>
 <script type="text/javascript" src="js/tools.js"></script>
 <script type="text/javascript">
     window.onload = function(){
-
+        window.frames[0].location.href=window.frames[0].location.href+'?new='+Math.random();
         var menuSpan = document.querySelectorAll(".menuSpan");
 
         //Define a variable to save the currently open menu
@@ -56,11 +56,84 @@
 
             //执行动画，从bengin向end过渡
             move(obj,"height",end,10,function(){
-                //动画执行完毕，内联样式已经没有存在的意义了，删除之
                 obj.style.height = "";
             });
 
         }
+
+        const musicbar = document.getElementsByClassName("musicBar")[0]
+        const musicClickBar = document.getElementById("musicClickBar")
+        musicClickBar.onclick = function (){
+
+            toggleMenu(musicbar)
+            function toggleMenu(obj){
+                //在切换类之前,获取元素位置
+                var begin = obj.offsetLeft;
+
+                //切换parentDiv的显示
+                toggleClass(obj , "fold");
+                //在切换类之后获取一个高度
+                var end = obj.offsetLeft;
+
+                //console.log("begin = "+begin +" , end = "+end);
+                //动画效果就是将高度从begin向end过渡
+                //将元素的高度重置为begin
+                obj.style.left = begin + "px";
+
+                //执行动画，从bengin向end过渡
+                move(obj,"left",end,30,function(){
+                    //动画执行完毕，内联样式已经没有存在的意义了，删除之
+                    obj.style.left = "";
+                });
+
+            }
+        }
+        var pictureNum = 1
+        musicbar.onmousemove = function (event){
+            if (event.clientX < musicbar.clientWidth * 0.25){
+                if (pictureNum !== 1){
+                    musicbar.style.backgroundImage = "url(img/musicBar/musicBar1.PNG)"
+                    pictureNum = 1
+                }
+            }else if (event.clientX < musicbar.clientWidth * 0.5){
+                if (pictureNum !== 2){
+                    musicbar.style.backgroundImage = "url(img/musicBar/musicBar2.PNG)"
+                    pictureNum = 2
+                }
+            }else if (event.clientX < musicbar.clientWidth * 0.75){
+                if (pictureNum !== 3){
+                    musicbar.style.backgroundImage = "url(img/musicBar/musicBar3.PNG)"
+                    pictureNum = 3
+                }
+            } else if (event.clientX < musicbar.clientWidth) {
+                if (pictureNum !== 4){
+                    musicbar.style.backgroundImage = "url(img/musicBar/musicBar4.PNG)"
+                    pictureNum = 4
+                }
+            }
+        }
+        const audio = document.getElementsByTagName("audio")[0]
+        const previousSong = document.getElementById("previousSong")
+        const audioPlay = document.getElementById("audioPlay")
+        const nextSong = document.getElementById("nextSong")
+        let audioStatus = false
+        previousSong.onclick = function () {
+        }
+        audioPlay.onclick = function () {
+            if (audioStatus){
+                audio.pause()
+                audioStatus = false
+                audioPlay.className = "musicButton iconfont icon-yinyue"
+            }else{
+                audio.play()
+                audioStatus = true
+                audioPlay.className = "musicButton iconfont icon-weibiaoti--"
+            }
+
+        }
+        nextSong.onclick = function () {
+        }
+
 
 
     };
@@ -77,7 +150,7 @@
                 <div id="nav_menu" class="sdmenu">
                     <div>
                         <span class="menuSpan">About My Self</span>
-                        <a href="./article/aboutMySelf-1.html" target="frame">1</a>
+                        <a href="./article/aboutMySelf-1.html" target="frame">Main</a>
                         <a href="./article/aboutMySelf-2.html" target="frame">2</a>
                         <a href="./article/aboutMySelf-3.html" target="frame">3</a>
                     </div>
@@ -115,6 +188,13 @@
 
         </div>
     </div>
+<div class="musicBar">
+    <div class="musicButton iconfont icon-shangyishoushangyige" id="previousSong"></div>
+    <div class="musicButton iconfont icon-yinyue" id="audioPlay"></div>
+    <div class="musicButton iconfont icon-xiayigexiayishou" id="nextSong"></div>
+    <div id="musicClickBar"></div>
+    <audio id="audioBarMusic" class="audio" src="audio/雨だれの歌.mp3" preload="auto" >你的浏览器不支持audio标签</audio>
+</div>
 
 </body>
 </html>

@@ -163,3 +163,14 @@ body{
 	bottom: 50px;
 	padding: 30px;
 }
+
+.icon-nickname:before,
+.icon-visible:before,
+.icon-visible1{
+	font-size: 18px;
+}
+
+.icon-weibiaoti--:before,
+.icon-yinyue:before{
+	font-size: 30px;
+}
