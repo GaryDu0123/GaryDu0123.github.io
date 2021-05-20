@@ -133,3 +133,39 @@ function toggleClass(obj, element) {
 	}
 
 }
+
+function showDialog(content, className = undefined) {
+	var layer = document.createElement("div");
+	layer.id = "layer";
+	var style = {
+		background: "#00000090",
+		position: "absolute",
+		zIndex: 10,
+		borderRadius: "40px",
+		margin: "auto",
+		height: "100px",
+		left: "50%",
+		top: "0%",
+		marginLeft: "-100px",
+		marginTop: "10px",
+		padding: "4px 10px"
+	}
+	if (className){
+		layer.className = className
+	}else {
+		for (var i in style) {
+			layer.style[i] = style[i];
+		}
+	}
+	if (document.getElementById("layer") == null) {
+		document.body.appendChild(layer);
+		layer.innerHTML = content;
+		if (!className){
+			layer.style.color = "white";
+			layer.style.textAlign = "center";
+			layer.style.lineHeight = "100px";
+
+		}
+		setTimeout("document.body.removeChild(layer)", 5000)
+	}
+}

@@ -5,54 +5,46 @@
     <title>Title</title>
 </head>
 <style type="text/css">
-
-    html,
-    body,
-    #image,
-    #gradient {
-        height: 100%;
-        width: 100%;
-    }
-
-    #image,
-    #gradient {
-        position: fixed;
-        top: 0;
-    }
-
-    body {
-        margin: 0;
-        opacity: 0;
-        transition: opacity 700ms;
-    }
-
-    body[shown] {
-        opacity: 1;
-    }
-
-    #image {
-        background-image: url(chrome-untrusted://new-tab-page/background.jpg?ts=1620607366);
-        background-position: center center;
-        background-repeat: no-repeat no-repeat;
-        background-size: cover;
-    }
-
-    #gradient {
-        background: radial-gradient(transparent 50%, black),
-        linear-gradient(transparent, black);
-        opacity: .2;
-    }
-
 </style>
+<script type="text/javascript">
+    window.onload =function(){
+        function showDialog(content) {
+            var layer = document.createElement("div");
+            layer.id = "layer";
+            var style = {
+                background: "#ccc",
+                position: "absolute",
+                zIndex: 10,
+
+                height: "40px",
+                left: "50%",
+                top: "0%",
+                marginLeft: "-100px",
+                marginTop: "10px",
+                padding: "4px 10px"
+            }
+            for (var i in style) {
+                layer.style[i] = style[i];
+            }
+            if (document.getElementById("layer") == null) {
+                document.body.appendChild(layer);
+                layer.innerHTML = content;
+                layer.style.textAlign = "center";
+                layer.style.lineHeight = "40px";
+                setTimeout("document.body.removeChild(layer)", 3000)
+            }
+        }
+
+        var btn = document.getElementById("btn")
+        btn.onclick = function () {
+            showDialog("hihihihi")
+        }
+    }
+</script>
 <body>
-<body shown="">
-<script src="background_image.js"></script>
-<!-- The img tag purely exists to capture the load event. -->
-<img src="chrome-untrusted://new-tab-page/background.jpg?ts=1620607366" onload="onImageLoad()" hidden="">
-<div id="image"></div>
-<div id="gradient"></div>
+
+<input id = "btn" type="button" value="hihihi">
 
 
-</body>
 </body>
 </html>

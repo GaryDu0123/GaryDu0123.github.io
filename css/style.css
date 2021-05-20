@@ -80,7 +80,9 @@ body{
 	padding: 10px 10px;
 	border-bottom: 1px solid white;
 	background-color: #00000000;
-	color: white;
+	color: #ffffff;
+	transition: all 0.2s linear;
+	border-radius: 5px
 }
 
 #outerBox .inputBox .inputText input:focus{
@@ -130,6 +132,30 @@ body{
     box-shadow: #15defd 0 0 30px;
     transition: all 0.2s linear;
 }
+
+.alertBox{
+	width: 500px;
+	height: 150px;
+	/*margin: 200px auto 0;*/
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	margin: auto;
+	font-family: "JetBrains Mono", "Microsoft YaHei", cursive;
+	transform: translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%); /* IE 9 */
+	-moz-transform:translate(-50%,-50%); /* Firefox */
+	-webkit-transform:translate(-50%,-50%); /* Safari & Chrome */
+	-o-transform:translate(-50%,-50%); 	/* Opera */
+
+	padding: 5px 5px;	/* login框内部的距离(内部与输入框和按钮的距离) */
+	background-color: #00000090;	/* login框背景颜色和透明度 */
+	border-radius: 40px;	/* 圆角边 */
+	text-align: center;	/* 框内所有内容剧中 */
+	opacity:1;
+	color: #eeeeee;
+}
+
 
 .heart{width: 10px;
 	height: 10px;position: fixed;

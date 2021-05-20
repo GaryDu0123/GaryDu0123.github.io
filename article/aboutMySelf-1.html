@@ -10,19 +10,22 @@
 <script src="./codeHeightLight/highlight.pack.js"></script>
 <link rel="stylesheet" href="../font/font-awesome-4.7.0/css/font-awesome.min.css">
 <style type="text/css">
+    .mainBox{
+        height: 1000px;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
     time{
         /*position: absolute;*/
         /*top: 200px;*/
         /*left: 400px;*/
         /*margin: 0 0 0 200px;*/
         font-size: 90px;
-
     }
     .containPolaroid{
         display: inline-block;
         height: 320px;
         width: 330px;
-
     }
     .time{
         /*height: 300px;*/
@@ -30,11 +33,13 @@
         /*padding-top: 200px;*/
         /*background-color: #4facfe;*/
         /*float: right;*/
+        font-family: "Microsoft YaHei", HelveticaNeue, cursive;
         display: inline-block;
         text-align: center;
         line-height: 300px;
         margin-left: 200px;
         margin-bottom: -100px;
+        text-shadow: #656464 5px 5px 5px;
     }
     div.polaroid
     {
@@ -64,6 +69,8 @@
         display: flex;
         justify-content:space-evenly;
         flex-direction: row-reverse;
+        z-index: 99;
+        /*position: fixed;*/
     }
 
     .boxa ul li {
@@ -331,8 +338,9 @@
 </head>
 <body>
     <div class="mainBox">
-
+<!--            <figure class="absolute-bg" style="background-image: url('img/photo.jpg');"></figure>-->
         <article>
+
 <!--            <p>test</p>-->
 <!--            <p>test</p>-->
             <div class="containPolaroid">
@@ -385,13 +393,8 @@
                     <a class="navA" href="javascript:"></a>
                 </div>
             </div>
-            <article>
-                hiashcoasncoanc
-            </article>
-            <code>sdcsd</code>
         </article>
     </div>
-
-<div id="backToTop" class="iconfont icon-Upward"></div>
+    <div id="backToTop" class="iconfont icon-Upward"></div>
 </body>
 </html>

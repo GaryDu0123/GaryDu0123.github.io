@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" sizes="144x144" href="./icon/logo/logo-144.png"/>
     <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="./icon/logo/logo-144.png"/>
     <link rel="bookmark" href="./icon/logo/logo-144.png" type="image/x-icon">
+    <script type="text/javascript" src="js/tools.js"></script>
     <title>Login Page</title>
 <script type="text/javascript">
     //https://blog.csdn.net/qq_41879385/article/details/83472892
@@ -67,29 +68,62 @@
     window.onload = function(){
         let timer;
         const loginBtn = document.getElementsByClassName("loginButton")[0];
-        loginBtn.onclick = function (){
-            const text = document.getElementById("username")
-            const password = document.getElementById("password")
-            if (text.value !== "" && password.value !== ""){
+        const text = document.getElementById("username")
+        const password = document.getElementById("password")
+        text.onclick = function (){
+            text.style = ""
+        }
+        password.onclick = function (){
+            password.style = ""
+        }
+        var judgement = function () {
+            if (text.value === "" && password.value === "" ||
+                (!/^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){4,19}$/.exec(text.value)
+                    && !/^(\w){6,20}$/.exec(password.value))) {
+                text.style.boxShadow = "0 0 20px #F32121"
+                text.style.outline = "1px solid #F32121"
+                password.style.boxShadow = "0 0 20px #F32121"
+                password.style.outline = "1px solid #F32121"
+                showDialog("<p>Please enter the user name and password</p><p>Enter 5-20 beginning with letters, numbers and _ as the username. </p><p>Enter 6-20 letters, numbers and _ as the password</p>", "alertBox")
+            } else if (text.value === "") {
+                text.style.boxShadow = "0 0 20px #F32121"
+                text.style.outline = "1px solid #F32121"
+                showDialog("Please enter the Username")
+            } else if (password.value === "") {
+                password.style.boxShadow = "0 0 20px #F32121"
+                password.style.outline = "1px solid #F32121"
+                showDialog("Please inter the Password")
+            } else if (!/^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){4,19}$/.exec(text.value)) {
+                text.style.boxShadow = "0 0 20px #F32121"
+                text.style.outline = "1px solid #F32121"
+                showDialog("Please enter 5-20 characters that start with a letter and can contain numbers, \"_\", \".\"")
+            } else if (!/^(\w){6,20}$/.exec(password.value)) {
+                password.style.boxShadow = "0 0 20px #F32121"
+                password.style.outline = "1px solid #F32121"
+                showDialog("Please enter 6-20 letters, numbers, and underscores as the password")
+            } else {
                 const outerbox = document.getElementById("outerBox");
-                timer = setInterval(function(){
+                timer = setInterval(function () {
                     // Achieve fading effect
                     outerbox.style.opacity = (opacity - 0.05).toString()
                     opacity -= 0.05
-                    if(Number(outerbox.style.opacity)<= 0){
+                    if (Number(outerbox.style.opacity) <= 0) {
                         //Lower the zero, turn off the timer
                         clearInterval(timer);
                         setTimeout(function () {
                             location = "./homepage.html"
-                        },500)
+                        }, 500)
                     }
-                },1000/60);
-            }else if (text.value === "" && password.value === ""){
-                alert("Please inter the Username and Password")
-            }else if (text.value === ""){
-                alert("Please inter the Username")
-            }else if (password.value === ""){
-                alert("Please inter the Password")
+                }, 1000 / 60);
+            }
+
+        }
+        loginBtn.onclick = judgement
+        document.onkeydown = function (event){
+            if (event.key === "Enter") {
+                judgement()
+                console.log("sdcsd")
+                return false;   // 这里的需要一个return false，作用为跳出这个事件，否则会出问题。
             }
         }
 
@@ -128,7 +162,7 @@
             
         }
 
-        let password = document.getElementById("password");
+        // let password = document.getElementById("password");
         const iconPassword = document.getElementById("iconPassword");
         password.onfocus = function (){
             iconPassword.className = "iconfont icon-visible1"
@@ -136,6 +170,7 @@
         password.onblur = function (){
             iconPassword.className = "iconfont icon-visible"
         }
+
 
 
     }

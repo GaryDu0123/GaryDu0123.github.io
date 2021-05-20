@@ -117,7 +117,22 @@
         const audioPlay = document.getElementById("audioPlay")
         const nextSong = document.getElementById("nextSong")
         let audioStatus = false
+        let songList = ["横山克 - 書店ガール (Positive ver.).mp3",
+            "鎖那 - タナタロ.mp3","中山真斗 - どれだけ希望を持ったのか.mp3",
+        "灰澈 - 星茶会.mp3", "雨だれの歌.mp3"]
+        let songListPosition = 0
         previousSong.onclick = function () {
+            audio.pause()
+            audioPlay.className = "musicButton iconfont icon-weibiaoti--"
+            if (songListPosition - 1 < 0){
+                songListPosition = songList.length-1
+            }else{
+                songListPosition -= 1
+            }
+
+            audio.src = "audio/" + songList[songListPosition]
+            audioStatus = true
+            audio.play()
         }
         audioPlay.onclick = function () {
             if (audioStatus){
@@ -132,10 +147,18 @@
 
         }
         nextSong.onclick = function () {
+            audio.pause()
+            audioPlay.className = "musicButton iconfont icon-weibiaoti--"
+            if (songList.length === songListPosition + 1){
+                songListPosition = 0
+            }else{
+                songListPosition += 1
+            }
+
+            audio.src = "audio/" + songList[songListPosition]
+            audioStatus = true
+            audio.play()
         }
-
-
-
     };
 
 
@@ -166,12 +189,12 @@
                         <a href="./article/css-1.html" target="frame">CSS</a>
                         <a href="./article/js-1.html" target="frame">JS</a>
                     </div>
-<!--                    <div class="collapsed">-->
-<!--                        <span class="menuSpan">CSS</span>-->
-<!--                        <a href="./article/css-1.html" target="frame">1</a>-->
+                    <div class="collapsed">
+                        <span class="menuSpan">Interesting resources</span>
+                        <a href="https://flukeout.github.io/" target="frame" title="https://flukeout.github.io/">CSS Diner</a>
 <!--                        <a href="./article/css-2.html" target="frame">2</a>-->
 <!--                        <a href="./article/css-3.html" target="frame">3</a>-->
-<!--                    </div>-->
+                    </div>
 <!--                    <div class="collapsed">-->
 <!--                        <span class="menuSpan">JavaScript</span>-->
 <!--                        <a href="./article/js-1.html" target="frame">1</a>-->
@@ -193,7 +216,7 @@
     <div class="musicButton iconfont icon-yinyue" id="audioPlay"></div>
     <div class="musicButton iconfont icon-xiayigexiayishou" id="nextSong"></div>
     <div id="musicClickBar"></div>
-    <audio id="audioBarMusic" class="audio" src="audio/雨だれの歌.mp3" preload="auto" >你的浏览器不支持audio标签</audio>
+    <audio id="audioBarMusic" class="audio" src="audio/横山克 - 書店ガール (Positive ver.).mp3" preload="auto" >你的浏览器不支持audio标签</audio>
 </div>
 
 </body>
