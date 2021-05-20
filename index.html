@@ -96,11 +96,11 @@
             } else if (!/^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){4,19}$/.exec(text.value)) {
                 text.style.boxShadow = "0 0 20px #F32121"
                 text.style.outline = "1px solid #F32121"
-                showDialog("Please enter 5-20 characters that start with a letter and can contain numbers, \"_\", \".\"")
+                showDialog("Please enter 5-20 characters that start with a letter and can contain numbers, \"_\", \".\"", "alertBox")
             } else if (!/^(\w){6,20}$/.exec(password.value)) {
                 password.style.boxShadow = "0 0 20px #F32121"
                 password.style.outline = "1px solid #F32121"
-                showDialog("Please enter 6-20 letters, numbers, and underscores as the password")
+                showDialog("Please enter 6-20 letters, numbers, and underscores as the password", "alertBox")
             } else {
                 const outerbox = document.getElementById("outerBox");
                 timer = setInterval(function () {
@@ -122,8 +122,8 @@
         document.onkeydown = function (event){
             if (event.key === "Enter") {
                 judgement()
-                console.log("sdcsd")
-                return false;   // 这里的需要一个return false，作用为跳出这个事件，否则会出问题。
+                console.log("Login successful")
+                return false;
             }
         }
 

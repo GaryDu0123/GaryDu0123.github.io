@@ -140,7 +140,7 @@ body{
 	position: absolute;
 	top: 15%;
 	left: 50%;
-	margin: auto;
+	margin: 0 auto;
 	font-family: "JetBrains Mono", "Microsoft YaHei", cursive;
 	transform: translate(-50%,-50%);
 	-ms-transform:translate(-50%,-50%); /* IE 9 */
@@ -154,7 +154,10 @@ body{
 	text-align: center;	/* 框内所有内容剧中 */
 	opacity:1;
 	color: #eeeeee;
+	line-height: 100px;
 }
+
+
 
 
 .heart{width: 10px;

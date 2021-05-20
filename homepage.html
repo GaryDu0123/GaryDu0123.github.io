@@ -67,22 +67,22 @@
 
             toggleMenu(musicbar)
             function toggleMenu(obj){
-                //在切换类之前,获取元素位置
+                //Before switching the class, get the element position
                 var begin = obj.offsetLeft;
 
-                //切换parentDiv的显示
+                //Toggle the display of parentDiv
                 toggleClass(obj , "fold");
-                //在切换类之后获取一个高度
+                //Get a height after switching classes
                 var end = obj.offsetLeft;
 
                 //console.log("begin = "+begin +" , end = "+end);
-                //动画效果就是将高度从begin向end过渡
-                //将元素的高度重置为begin
+                //The animation effect is to transition the height from begin to end
+                //Reset the height of the element to begin
                 obj.style.left = begin + "px";
 
                 //执行动画，从bengin向end过渡
                 move(obj,"left",end,30,function(){
-                    //动画执行完毕，内联样式已经没有存在的意义了，删除之
+                    //After the animation is executed, the inline style has no meaning, delete it
                     obj.style.left = "";
                 });
 
