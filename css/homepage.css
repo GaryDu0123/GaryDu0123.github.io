@@ -207,13 +207,13 @@ div.musicButton {
     font-size: 40px;
     transition: font-size 0.2s;
     -moz-transition: font-size 0.2s; /* Firefox 4 */
-    -webkit-transition: font-size 0.2s; /* Safari 和 Chrome */
+    -webkit-transition: font-size 0.2s; /* Safari and Chrome */
     -o-transition: font-size 0.2s; /* Opera */
 }
 .iconfont:active{
     font-size: 36px;
     transition: font-size 0.2s;
     -moz-transition: font-size 0.2s; /* Firefox 4 */
-    -webkit-transition: font-size 0.2s; /* Safari 和 Chrome */
+    -webkit-transition: font-size 0.2s; /* Safari and Chrome */
     -o-transition: font-size 0.2s; /* Opera */
 }
