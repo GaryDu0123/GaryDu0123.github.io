@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T18 Bot Client Front End Part</title>
+</head>
+
+<style type="text/css">
+    body{
+        background-color: blanchedalmond;
+        margin:0 auto;
+        /*text-align:center;*/
+    }
+
+    .control{
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        padding: 0;
+    }
+
+    #up{
+        margin-left: -50px;
+        /*top: 0;*/
+        margin-top: -150px;
+        left : 50%;
+        right: 50%;
+        top: 50%;
+
+    }
+
+    #down{
+        left : 50%;
+        top: 50%;
+        margin-top: 50px;
+        margin-left: -50px;
+        /*top: 200px;*/
+    }
+
+    #left{
+        top: 50%;
+        left : 50%;
+        /*top: 100px;*/
+        margin-top: -50px;
+        margin-left: 50px;
+    }
+
+    #right{
+        /*margin-left: 200px;*/
+
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -150px;
+    }
+
+    #reConnect{
+        top: 50%;
+        left: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+    }
+
+    #input{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -150px;
+        margin-top: -200px;
+    }
+</style>
+<script type="text/javascript">
+    window.onload = function () {
+        function setupSocket(socket, buttonUp, buttonDown, buttonRight, buttonLeft){
+            socket.onmessage = function (e){
+                console.log(e.data);
+            }
+
+            socket.onopen = function() {
+                socket.send('Ping'); // Send the message 'Ping' to the server
+                buttonUp.onclick = function (){
+                    // // 发送一个初始化消息
+                    socket.send('up');
+                    console.log("Send message |up|");
+                }
+                buttonDown.onclick = function (){
+                    socket.send("down");
+                    console.log("Send message |down|");
+                }
+                buttonLeft.onclick = function (){
+                    socket.send("left");
+                    console.log("Send message |left|");
+                }
+                buttonRight.onclick = function (){
+                    socket.send("right");
+                    console.log("Send message |right|");
+                }
+                // 监听Socket的关闭
+                socket.onclose = function(event) {
+                    console.log('Client notified socket has closed', event);
+                    alert("Lost Server Connection");
+                };
+            };
+        }
+        var address = 'ws://127.0.0.1:9102';
+        var socket = new WebSocket(address);
+        const buttonUp = document.getElementById("up");
+        const buttonDown = document.getElementById("down");
+        const buttonRight = document.getElementById("right");
+        const buttonLeft = document.getElementById("left");
+        // socket.onopen = function(event) {
+        //     // 关闭Socket....
+        //     //socket.close()
+        // };
+        const reconnect = document.getElementById("reConnect");
+        reconnect.onclick = function (){
+            if(socket.readyState === socket.CLOSED){
+                socket = new WebSocket(address);
+                setupSocket(socket, buttonUp, buttonDown, buttonRight, buttonLeft);
+                console.log("Reset Successful")
+            }
+        }
+        setupSocket(socket, buttonUp, buttonDown, buttonRight, buttonLeft);
+
+        const change = document.getElementById("address");
+        const inputBox = document.getElementById("inputBox")
+        change.onclick = function () {
+            address = "ws://"+inputBox.value+":9102";
+            socket = new WebSocket(address);
+            setupSocket(socket, buttonUp, buttonDown, buttonRight, buttonLeft);
+        }
+
+    }
+
+</script>
+
+<body>
+    <div class="buttonBox">
+        <label id="input">
+            <input id="inputBox" type="text" value="127.0.0.1">
+            <button id="address">Change Address</button>
+        </label>
+
+        <div>
+            <button class="control" id="up">UP</button>
+        </div>
+        <div>
+            <button class="control" id="reConnect">Reconnect</button>
+        </div>
+        <div>
+            <button class="control" id="down">DOWN</button>
+        </div>
+        <div>
+            <button class="control" id="right">RIGHT</button>
+        </div>
+        <div>
+            <button class="control" id="left">LEFT</button>
+        </div>
+    </div>
+</body>
+</html>
